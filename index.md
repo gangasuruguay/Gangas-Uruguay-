@@ -1,31 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gangas Uruguay</title>
-  <style>
-    body {
-      background-color: #b11f1f;
-      color: #fff;
-      text-align: center;
-      font-family: 'Arial', sans-serif;
-      padding: 2rem;
-    }
-    img.logo {
-      width: 300px;
-      max-width: 90%;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-    .price {
-      font-size: 2.5rem;
-      margin-top: 1rem;
-      color: #ffee00;
-    }
-  </style>
-</head>
-<body>
+
 
   <h1>Bienvenidos a Gangas Uruguay</h1>
 
