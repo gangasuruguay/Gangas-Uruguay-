@@ -1,6 +1,6 @@
 
 
-  <h1>Bienvenidos a Gangas Uruguay</h1>
+
 
   <!-- Imagen del logo -->
   <img src="images/logo.png" alt="Logo Gangas" class="logo">
