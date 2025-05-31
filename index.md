@@ -2,12 +2,6 @@
 
 
 
-  <!-- Imagen del logo -->
-  <img src="images/logo.png" alt="Logo Gangas" class="logo">
-
-  <p class="price">¡Desde solo $499!</p>
-
-  <p>📞 Pedidos al: <strong>097213277</strong></p>
 
 </body>
 </html>
