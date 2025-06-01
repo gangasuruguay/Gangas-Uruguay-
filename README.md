@@ -1,4 +1,5 @@
 ![Logo Gangas Uruguay](assets/logo.png.jpg)
+
 # 🛒 Gangas Uruguay
 
 ¡Bienvenido al sitio oficial de **Gangas Uruguay**!
