@@ -6,7 +6,7 @@
 
 Gangas-Uruguay-/
 ├── assets/
-│   └── logo.png
+│   └── logo.jpg
 ├── README.md
 ├── index.md
 ├── ...
