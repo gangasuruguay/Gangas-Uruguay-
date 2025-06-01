@@ -1,7 +1,6 @@
 <header>
   <img src="logo.png.jpg" alt="Logo Gangas Uruguay" style="height: 100px;" />
 
-<body>
   <header>
     <img src="logo.png" alt="Gangas Tacuarembó Logo">
     <h1>Gangas Uruguay </h1>
