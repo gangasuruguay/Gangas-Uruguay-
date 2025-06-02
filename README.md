@@ -1,47 +1,49 @@
 <p align="center">
-  <img src="logo.png.jpg" alt="Logo Gangas Uruguay" width="180">
+  <img src="logo.png.jpg" alt="Logo Gangas Uruguay" width="180" style="border-radius: 12px; box-shadow: 0 4px 10px rgba(196,0,0,0.6);">
 </p>
 
-<h1 align="center">🛒 Gangas Uruguay</h1>
+# 🛒 Gangas Uruguay
 
-<p align="center">
-  ¡Bienvenido al sitio oficial de <strong>Gangas Uruguay</strong>!<br>
-  Ofertas imperdibles desde <strong>$499</strong> con entrega a domicilio en todo el país.  
-</p>
+**¡Las mejores ofertas desde $499 con entrega a domicilio en todo Uruguay!**
 
 ---
 
-## 📦 ¿Qué ofrecemos?
+## 🎯 ¿Por qué elegir Gangas Uruguay?
 
-- ✅ Productos seleccionados a solo $499  
-- 🔄 Novedades actualizadas todos los días  
-- 💬 Atención directa por WhatsApp  
-- 🚚 Envíos en todo Uruguay  
-- 🛍️ Franquicias en varias ciudades  
-
----
-
-## 🌐 Sitio Web
-
-📎 [gangasuruguay.github.io/Gangas-Uruguay-](https://gangasuruguay.github.io/Gangas-Uruguay-/)
+- 🔥 Productos exclusivos a solo **$499**  
+- 📅 Novedades y ofertas **todos los días**  
+- 💬 Atención rápida y personalizada por **WhatsApp**  
+- 🚚 Entregas confiables en **todo el país**
 
 ---
 
-## 📲 Contacto y Redes Sociales
+## 🛍️ Catálogo Destacado
 
-- 📞 **WhatsApp**: [097 213 277](https://wa.me/59897213277)
-- 📘 **Facebook**:
-  - [Gangas Tacuarembó](https://www.facebook.com/share/1YoChsDWQq/?mibextid=wwXIfr)
-  - [Gangas Solymar](https://www.facebook.com/share/196KdGnENq/?mibextid=wwXIfr)
+Descubrí una selección única de productos novedosos, pensados para vos.  
+Visita nuestro sitio web para ver el catálogo completo con imágenes y detalles.
 
----
-
-## ⚙️ Cómo colaborar
-
-¿Tenés una franquicia o querés sumar tu ciudad? ¡Contactanos por WhatsApp!
+➡️ [¡Entrar al catálogo!](https://gangasuruguay.github.io/Gangas-Uruguay-/)
 
 ---
 
-<p align="center">
-  <em>Sitio creado por Nicolás Fontana – Gangas Uruguay © 2025</em>
-</p>
+## 📲 Contacto Directo
+
+¿Querés hacer tu pedido o consultarnos?  
+Usá WhatsApp para atención inmediata y personalizada.
+
+[💬 Pedí por WhatsApp: +598 9721 3277](https://wa.me/59897213277)
+
+---
+
+## 🌐 Redes Sociales
+
+Seguinos para no perderte ninguna oferta:
+
+- [Facebook Gangas Tacuarembó](https://www.facebook.com/share/1YoChsDWQq/?mibextid=wwXIfr)  
+- [Facebook Gangas Solymar](https://www.facebook.com/share/196KdGnENq/?mibextid=wwXIfr)  
+
+---
+
+<footer align="center">
+  <sub>© 2025 Gangas Uruguay | Desarrollado por Nicolás Fontana</sub>
+</footer>
