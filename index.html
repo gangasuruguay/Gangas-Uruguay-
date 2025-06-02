@@ -62,6 +62,39 @@
       color: #c40000;
     }
 
+    .grid-productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .producto {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+    }
+
+    .producto img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .producto h3 {
+      text-align: center;
+      color: #c62828;
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    .producto p {
+      text-align: center;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
     footer {
       background-color: #222;
       color: #eee;
@@ -72,275 +105,70 @@
 </head>
 <body>
   <header>
-    <img src="logo.png.jpg" alt="Gangas Uruguay Logo" />
+    <img src="logo.jpg" alt="Gangas Uruguay Logo" />
     <h1>Gangas Uruguay</h1>
     <p>¡Ofertas desde $499 y entregas!</p>
   </header>
 
-  <a
-    class="whatsapp-btn"
-    href="https://wa.me/59897213277"
-    target="_blank"
-    >💬 Hacenos tu pedido por WhatsApp</a
-  >
+  <a class="whatsapp-btn" href="https://wa.me/59897213277" target="_blank">
+    💬 Hacenos tu pedido por WhatsApp
+  </a>
   <br />
-  <a
-    class="whatsapp-btn catalog-btn"
-    href="catalogo.html"
-    target="_blank"
-    >📁 Ver Catálogo Completo</a
-  >
+  <a class="whatsapp-btn catalog-btn" href="catalogo.html" target="_blank">
+    📁 Ver Catálogo Completo
+  </a>
 
-  <section
-    style="
-      background-color: #f8f8f8;
-      padding: 40px 20px;
-      font-family: 'Segoe UI', sans-serif;
-    "
-  >
-    <h2
-      style="
-        text-align: center;
-        color: #b71c1c;
-        font-size: 32px;
-        margin-bottom: 10px;
-      "
-    >
-      Catálogo Exclusivo $499
-    </h2>
-    <p
-      style="
-        text-align: center;
-        color: #555;
-        font-size: 18px;
-        margin-bottom: 40px;
-      "
-    >
-      Aquí vas a encontrar productos novedosos a solo $499
-    </p>
+  <section class="productos">
+    <h2>Catálogo Exclusivo $499</h2>
+    <p>Aquí vas a encontrar productos novedosos a solo $499</p>
 
-    <div
-      style="
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 25px;
-        max-width: 1100px;
-        margin: 0 auto;
-      "
-    >
-      <!-- Productos del 1 al 15 -->
-      <!-- Repetí y ajustá para cada uno -->
-      <div
-        style="
-          background: #fff;
-          border-radius: 12px;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-          padding: 15px;
-        "
-      >
-        <img
-          src="prod1/prod1.jpg"
-          alt="Producto 1"
-          style="width: 100%; border-radius: 10px"
-        />
-        <h3
-          style="
-            text-align: center;
-            color: #c62828;
-            font-size: 18px;
-            margin-top: 10px;
-          "
-        >
-          Producto 1
-        </h3>
-        <p
-          style="
-            text-align: center;
-            font-weight: bold;
-            font-size: 16px;
-          "
-        >
-          $499
-        </p>
+    <div class="grid-productos">
+      <!-- Producto 1 -->
+      <div class="producto">
+        <img src="prod1/prod1.jpg" alt="Producto 1" />
+        <h3>Producto 1</h3>
+        <p>$499</p>
       </div>
 
-      <div
-        style="
-          background: #fff;
-          border-radius: 12px;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-          padding: 15px;
-        "
-      >
-        <img
-          src="prod2/prod2.jpg"
-          alt="Producto 2"
-          style="width: 100%; border-radius: 10px"
-        />
-        <h3
-          style="
-            text-align: center;
-            color: #c62828;
-            font-size: 18px;
-            margin-top: 10px;
-          "
-        >
-          Producto 2
-        </h3>
-        <p
-          style="
-            text-align: center;
-            font-weight: bold;
-            font-size: 16px;
-          "
-        >
-          $499
-        </p>
+      <!-- Producto 2 -->
+      <div class="producto">
+        <img src="prod2/prod2.jpg" alt="Producto 2" />
+        <h3>Producto 2</h3>
+        <p>$499</p>
       </div>
 
       <!-- Producto 3 -->
-      <div
-        style="
-          background: #fff;
-          border-radius: 12px;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-          padding: 15px;
-        "
-      >
-        <img
-          src="prod3/prod3.jpg"
-          alt="Producto 3"
-          style="width: 100%; border-radius: 10px"
-        />
-        <h3
-          style="
-            text-align: center;
-            color: #c62828;
-            font-size: 18px;
-            margin-top: 10px;
-          "
-        >
-          Producto 3
-        </h3>
-        <p
-          style="
-            text-align: center;
-            font-weight: bold;
-            font-size: 16px;
-          "
-        >
-          $499
-        </p>
+      <div class="producto">
+        <img src="prod3/prod3.jpg" alt="Producto 3" />
+        <h3>Producto 3</h3>
+        <p>$499</p>
       </div>
 
       <!-- Producto 4 -->
-      <div
-        style="
-          background: #fff;
-          border-radius: 12px;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-          padding: 15px;
-        "
-      >
-        <img
-          src="prod4/prod4.jpg"
-          alt="Producto 4"
-          style="width: 100%; border-radius: 10px"
-        />
-        <h3
-          style="
-            text-align: center;
-            color: #c62828;
-            font-size: 18px;
-            margin-top: 10px;
-          "
-        >
-          Producto 4
-        </h3>
-        <p
-          style="
-            text-align: center;
-            font-weight: bold;
-            font-size: 16px;
-          "
-        >
-          $499
-        </p>
+      <div class="producto">
+        <img src="prod4/prod4.jpg" alt="Producto 4" />
+        <h3>Producto 4</h3>
+        <p>$499</p>
       </div>
 
       <!-- Producto 5 -->
-      <div
-        style="
-          background: #fff;
-          border-radius: 12px;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-          padding: 15px;
-        "
-      >
-        <img
-          src="prod5/prod5.jpg"
-          alt="Producto 5"
-          style="width: 100%; border-radius: 10px"
-        />
-        <h3
-          style="
-            text-align: center;
-            color: #c62828;
-            font-size: 18px;
-            margin-top: 10px;
-          "
-        >
-          Producto 5
-        </h3>
-        <p
-          style="
-            text-align: center;
-            font-weight: bold;
-            font-size: 16px;
-          "
-        >
-          $499
-        </p>
+      <div class="producto">
+        <img src="prod5/prod5.jpg" alt="Producto 5" />
+        <h3>Producto 5</h3>
+        <p>$499</p>
       </div>
 
       <!-- Producto 6 -->
-      <div
-        style="
-          background: #fff;
-          border-radius: 12px;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-          padding: 15px;
-        "
-      >
-        <img
-          src="prod6/prod6.jpg"
-          alt="Producto 6"
-          style="width: 100%; border-radius: 10px"
-        />
-        <h3
-          style="
-            text-align: center;
-            color: #c62828;
-            font-size: 18px;
-            margin-top: 10px;
-          "
-        >
-          Producto 6
-        </h3>
-        <p
-          style="
-            text-align: center;
-            font-weight: bold;
-            font-size: 16px;
-          "
-        >
-          $499
-        </p>
+      <div class="producto">
+        <img src="prod6/prod6.jpg" alt="Producto 6" />
+        <h3>Producto 6</h3>
+        <p>$499</p>
       </div>
+    </div>
+  </section>
 
-      <!-- Producto 7 -->
-      <div
-        style="
-          background: #fff;
-          border-radius: 12px;
-          box-shadow: 0 4px 12px rgba
+  <footer>
+    © 2025 Gangas Uruguay - Todos los derechos reservados
+  </footer>
+</body>
+</html>
