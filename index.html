@@ -36,12 +36,12 @@
       font-weight: 300;
     }
 
-    .whatsapp-btn {
+    .btn {
       display: inline-block;
       background-color: #25d366;
       color: white;
       padding: 12px 20px;
-      margin: 25px auto;
+      margin: 25px auto 10px;
       border-radius: 8px;
       text-decoration: none;
       font-size: 1em;
@@ -55,14 +55,22 @@
     }
 
     .productos {
-      padding: 30px 15px;
+      padding: 40px 20px;
     }
 
     .productos h2 {
-      color: #c40000;
+      color: #b71c1c;
+      font-size: 32px;
+      margin-bottom: 10px;
     }
 
-    .grid-productos {
+    .productos p {
+      color: #555;
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+
+    .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 25px;
@@ -83,14 +91,12 @@
     }
 
     .producto h3 {
-      text-align: center;
       color: #c62828;
       font-size: 18px;
       margin-top: 10px;
     }
 
     .producto p {
-      text-align: center;
       font-weight: bold;
       font-size: 16px;
     }
@@ -104,17 +110,18 @@
   </style>
 </head>
 <body>
+
   <header>
     <img src="logo.jpg" alt="Gangas Uruguay Logo" />
     <h1>Gangas Uruguay</h1>
-    <p>¡Ofertas desde $499 y entregas!</p>
+    <p>¡Ofertas desde $499 y entregas a todo el país!</p>
   </header>
 
-  <a class="whatsapp-btn" href="https://wa.me/59897213277" target="_blank">
+  <a class="btn" href="https://wa.me/59897213277" target="_blank">
     💬 Hacenos tu pedido por WhatsApp
   </a>
   <br />
-  <a class="whatsapp-btn catalog-btn" href="catalogo.html" target="_blank">
+  <a class="btn catalog-btn" href="catalogo.html" target="_blank">
     📁 Ver Catálogo Completo
   </a>
 
@@ -122,45 +129,35 @@
     <h2>Catálogo Exclusivo $499</h2>
     <p>Aquí vas a encontrar productos novedosos a solo $499</p>
 
-    <div class="grid-productos">
-      <!-- Producto 1 -->
+    <div class="grid">
+      <!-- Producto 1 al 6 -->
       <div class="producto">
-        <img src="prod1/prod1.jpg" alt="Producto 1" />
+        <img src="prod1.jpg" alt="Producto 1" />
         <h3>Producto 1</h3>
         <p>$499</p>
       </div>
-
-      <!-- Producto 2 -->
       <div class="producto">
-        <img src="prod2/prod2.jpg" alt="Producto 2" />
+        <img src="prod2.jpg" alt="Producto 2" />
         <h3>Producto 2</h3>
         <p>$499</p>
       </div>
-
-      <!-- Producto 3 -->
       <div class="producto">
-        <img src="prod3/prod3.jpg" alt="Producto 3" />
+        <img src="prod3.jpg" alt="Producto 3" />
         <h3>Producto 3</h3>
         <p>$499</p>
       </div>
-
-      <!-- Producto 4 -->
       <div class="producto">
-        <img src="prod4/prod4.jpg" alt="Producto 4" />
+        <img src="prod4.jpg" alt="Producto 4" />
         <h3>Producto 4</h3>
         <p>$499</p>
       </div>
-
-      <!-- Producto 5 -->
       <div class="producto">
-        <img src="prod5/prod5.jpg" alt="Producto 5" />
+        <img src="prod5.jpg" alt="Producto 5" />
         <h3>Producto 5</h3>
         <p>$499</p>
       </div>
-
-      <!-- Producto 6 -->
       <div class="producto">
-        <img src="prod6/prod6.jpg" alt="Producto 6" />
+        <img src="prod6.jpg" alt="Producto 6" />
         <h3>Producto 6</h3>
         <p>$499</p>
       </div>
@@ -168,7 +165,8 @@
   </section>
 
   <footer>
-    © 2025 Gangas Uruguay - Todos los derechos reservados
+    © 2025 Gangas Uruguay — Todos los derechos reservados.
   </footer>
+
 </body>
 </html>
