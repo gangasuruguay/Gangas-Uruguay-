@@ -1,8 +1,4 @@
----
-layout: default
-title: Gangas Uruguay
-description: Catálogo exclusivo de productos a $499. Reventa directa desde Tacuarembó con entregas a todo el país.
----
+![Gangas Uruguay Logo](logo.png.jpg)
 
 # 🛍️ Gangas Uruguay
 
