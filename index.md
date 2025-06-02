@@ -1,20 +1,40 @@
-<header>
-    <img src="logo.png.jpg" alt="Gangas Tacuarembó Logo">
-    <h1>Gangas Uruguay </h1>
-    <p>¡Ofertas desde $499 y entregas a domicilio!</p>
-  </header>
+<p align="center">
+  <img src="logo.png.jpg" alt="Logo Gangas Uruguay" width="180">
+</p>
 
-  <a class="whatsapp-btn" href="https://wa.me/59897213277" target="_blank">
-    💬 Hacenos tu pedido por WhatsApp
-  </a>
+<h1 align="center">🛒 Gangas Uruguay</h1>
 
-  <section class="productos">
-    <h2>Muy pronto vas a ver nuestros productos acá 👀</h2>
-    <p>Estamos preparando todo para mostrarte nuestras mejores gangas.</p>
-  </section>
+<p align="center">
+  ¡Bienvenido al sitio oficial de <strong>Gangas Uruguay</strong>!<br>
+  Ofertas imperdibles desde <strong>$499</strong> con entrega a domicilio en todo Uruguay.
+</p>
 
-  <footer>
-    © 2025 Gangas Uruguay . Todos los derechos reservados.
-  </footer>
-</body>
-</html>
+---
+
+## 📦 ¿Qué ofrecemos?
+
+- ✅ Productos seleccionados a solo $499  
+- 🔄 Novedades publicadas todos los días  
+- 💬 Atención personalizada por WhatsApp  
+- 🚚 Envíos en todo el país  
+
+---
+
+## 🌐 Sitio Web
+
+🔗 [gangasuruguay.github.io/Gangas-Uruguay-](https://gangasuruguay.github.io/Gangas-Uruguay-/)
+
+---
+
+## 📲 Contacto y Redes Sociales
+
+- 📞 **WhatsApp**: [097 213 277](https://wa.me/59897213277)  
+- 📘 **Facebook**:
+  - [Gangas Tacuarembó](https://www.facebook.com/share/1YoChsDWQq/?mibextid=wwXIfr)
+  - [Gangas Solymar](https://www.facebook.com/share/196KdGnENq/?mibextid=wwXIfr)
+
+---
+
+<p align="center">
+  <em>Sitio desarrollado por Nicolás Fontana – Gangas Uruguay © 2025</em>
+</p>
