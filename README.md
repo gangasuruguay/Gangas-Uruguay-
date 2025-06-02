@@ -4,7 +4,7 @@
 
 # 🛒 Gangas Uruguay
 
-**¡Las mejores ofertas desde $499 con entrega a domicilio en todo Uruguay!**
+**¡Las mejores ofertas desde $499 con entrega en todo el Uruguay!**
 
 ---
 
