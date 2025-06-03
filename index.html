@@ -2,97 +2,74 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gangas Uruguay | Bienvenidos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gangas Uruguay - Inicio</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="favicon.ico" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    /* Coloca aquí el contenido de style.css si también lo querés embebido */
-  </style>
 </head>
-<body onload="inicializarSitio()">
-
-  <div class="popup" id="popup-descuento">
-    <div class="popup-content">
-      <span class="cerrar" onclick="cerrarPopup()">&times;</span>
-      🎉 ¡10% de descuento si comprás hoy por WhatsApp! <br><br>
-      <a href="https://wa.me/59897213277" class="popup-boton">¡Aprovechar!</a>
-    </div>
-  </div>
+<body>
 
   <header class="cabecera">
-    <img src="logo.png" alt="Gangas Uruguay" class="logo">
+    <img src="logo.png" alt="Logo Gangas Uruguay" class="logo" />
     <h1>Gangas Uruguay</h1>
-    <p>Reventas, envíos y gangas para todo el país 🇺🇾</p>
-    <div class="modo-oscuro-switch">
-      <label>🌗 Modo oscuro <input type="checkbox" id="modoOscuroSwitch"></label>
-    </div>
+    <p>Ofertas increíbles desde <strong>$499</strong> — ¡Envíos a todo el país!</p>
+
+    <label style="position:absolute; top:20px; right:20px; color:#fff; user-select:none;">
+      Modo Oscuro
+      <input type="checkbox" id="modoOscuroSwitch" />
+    </label>
   </header>
 
   <main>
-    <section class="intro">
-      <h2>🛍️ Bienvenido a Gangas Uruguay</h2>
-      <p>La tienda de reventas más confiable de Tacuarembó. Nuevos productos cada semana, con envíos a todo el país.</p>
-      <a href="catalogo.html" class="boton-destacado">Ver Catálogo</a>
+    <section style="text-align:center; margin-top:2rem;">
+      <a href="catalogo.html" class="boton-destacado">Ver Catálogo Completo</a>
     </section>
 
     <section class="redes">
-      <h2>📲 Nuestras redes</h2>
-      <a href="https://wa.me/59897213277">📱 WhatsApp</a> |
-      <a href="https://www.facebook.com/share/1YoChsDWQq/?mibextid=wwXIfr">Facebook Gangas</a>
+      <h2>📱 Seguinos en nuestras redes</h2>
+      <ul>
+        <li><a href="https://www.facebook.com/share/1YoChsDWQq/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Facebook Gangas Tacuarembó (link 1)</a></li>
+        <li><a href="https://www.facebook.com/share/1BmVUB7oPt/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Facebook Gangas Tacuarembó (link 2)</a></li>
+      </ul>
     </section>
   </main>
 
   <footer>
-    &copy; 2025 Gangas Uruguay | Desarrollado por Nicolás Fontana
-    <div class="contador" id="contador"></div>
+    © 2025 Gangas Uruguay | Desarrollado con ❤️ por Nicolás Fontana
   </footer>
 
-  <script>
-    // Modo oscuro
-    document.addEventListener('DOMContentLoaded', () => {
-      const modoOscuroSwitch = document.getElementById('modoOscuroSwitch');
-      const modo = localStorage.getItem('modoOscuro');
+  <!-- Popup descuento -->
+  <div id="popup-descuento" class="popup" role="dialog" aria-modal="true" aria-labelledby="popupTitulo">
+    <div class="popup-content">
+      <span class="cerrar" onclick="cerrarPopup()" aria-label="Cerrar popup">&times;</span>
+      <h2 id="popupTitulo">🎉 ¡10% de descuento si comprás hoy por WhatsApp!</h2>
+      <a href="https://wa.me/59897213277" target="_blank" class="popup-boton">💬 Pedí por WhatsApp</a>
+    </div>
+  </div>
 
-      if (modo === 'on') {
-        document.body.classList.add('dark-mode');
-        modoOscuroSwitch.checked = true;
+  <script>
+    // Popup y contador visitas
+    window.addEventListener("load", () => {
+      const popup = document.getElementById("popup-descuento");
+      if (!localStorage.getItem("popupMostrado")) {
+        popup.style.display = "flex";
+        localStorage.setItem("popupMostrado", "true");
       }
 
-      if (modoOscuroSwitch) {
-        modoOscuroSwitch.addEventListener('change', () => {
-          document.body.classList.toggle('dark-mode');
-          localStorage.setItem('modoOscuro', document.body.classList.contains('dark-mode') ? 'on' : 'off');
-        });
+      let visitas = localStorage.getItem("visitas") || 0;
+      visitas++;
+      localStorage.setItem("visitas", visitas);
+      if (document.getElementById("contador")) {
+        document.getElementById("contador").innerText = `👀 Visitas en este navegador: ${visitas}`;
       }
     });
 
-    // Popup de descuento
-    function inicializarSitio() {
-      const popup = document.getElementById('popup-descuento');
-      if (!localStorage.getItem('popupMostrado')) {
-        popup.style.display = 'flex';
-        localStorage.setItem('popupMostrado', 'true');
-      }
-      mostrarContador();
-    }
-
-    // Cerrar popup
     function cerrarPopup() {
-      document.getElementById('popup-descuento').style.display = 'none';
+      document.getElementById("popup-descuento").style.display = "none";
     }
 
-    // Contador de visitas
-    function mostrarContador() {
-      let visitas = localStorage.getItem('visitas') || 0;
-      visitas++;
-      localStorage.setItem('visitas', visitas);
-      const contador = document.getElementById('contador');
-      if (contador) {
-        contador.innerText = `👀 Visitas en este navegador: ${visitas}`;
-      }
-    }
-  </script>
-</body>
-</html>
+    // Modo oscuro
+    document.addEventListener("DOMContentLoaded", () => {
+      const switchModo = document.getElementById("modoOscuroSwitch");
+      const modo = localStorage.getItem("modoOscuro");
+
+      if (modo === "on
