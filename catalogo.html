@@ -3,122 +3,113 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Catálogo | Gangas Uruguay</title>
+  <title>Catálogo - Gangas Uruguay</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #fff9f9;
       margin: 0;
       padding: 0;
+      background-color: #f3f3f3;
       color: #333;
     }
 
     header {
-      text-align: center;
-      padding: 2rem 1rem;
       background-color: #c40000;
       color: white;
+      padding: 2rem 1rem;
+      text-align: center;
     }
 
-    header h1 {
-      font-size: 2.4rem;
-      margin-bottom: 0.5rem;
+    header img {
+      width: 160px;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     }
 
-    header p {
-      font-size: 1.2rem;
+    h1 {
+      margin-top: 1rem;
     }
 
     .catalogo {
+      max-width: 1200px;
+      margin: 2rem auto;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 2rem;
-      padding: 2rem 1rem;
-      max-width: 1200px;
-      margin: auto;
     }
 
     .producto {
       width: 200px;
       background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      padding: 1rem;
       text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: transform 0.3s ease;
     }
 
     .producto:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      transform: translateY(-5px) scale(1.03);
     }
 
     .producto img {
       width: 100%;
-      height: auto;
+      border-radius: 8px;
     }
 
-    .producto p {
-      padding: 1rem;
+    .producto h3 {
+      margin-top: 0.7rem;
+      font-size: 1.1rem;
+      color: #c40000;
+    }
+
+    .producto p.descripcion {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .producto p.codigo {
+      margin-top: 0.5rem;
       font-weight: bold;
       color: #c40000;
     }
 
-    .volver {
-      text-align: center;
-      margin: 3rem 0 1rem;
-    }
-
-    .volver a {
-      background-color: #c40000;
-      color: white;
-      padding: 0.8rem 1.5rem;
-      border-radius: 10px;
-      text-decoration: none;
-      font-size: 1.1rem;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-
-    .volver a:hover {
-      background-color: #a00000;
-    }
-
     footer {
-      text-align: center;
-      padding: 2rem 1rem;
       background-color: #eee;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      margin-top: 3rem;
     }
   </style>
 </head>
 <body>
 
   <header>
+    <img src="logo.png.jpg" alt="Logo Gangas Uruguay" />
     <h1>Catálogo de Productos</h1>
-    <p>Explorá todas nuestras gangas de $499 con entrega en todo el país</p>
+    <p>Ofertas desde $499 con entrega en todo el país</p>
   </header>
 
-  <div class="catalogo" id="catalogo"></div>
-
-  <div class="volver">
-    <a href="index.html">⬅️ Volver al Inicio</a>
-  </div>
+  <section class="catalogo" id="catalogo"></section>
 
   <footer>
     © 2025 Gangas Uruguay | Desarrollado por Nicolás Fontana
   </footer>
 
   <script>
-    const contenedor = document.getElementById("catalogo");
+    const catalogo = document.getElementById('catalogo');
     for (let i = 1; i <= 15; i++) {
-      const div = document.createElement("div");
-      div.className = "producto";
-      div.innerHTML = `
+      const producto = document.createElement('div');
+      producto.className = 'producto';
+      producto.innerHTML = `
         <img src="prod${i}/prod${i}.jpg" alt="Producto ${i}">
-        <p>Código: PROD${i.toString().padStart(2, '0')}</p>
+        <h3>Producto ${i}</h3>
+        <p class="descripcion">Descripción breve del producto ${i}</p>
+        <p class="codigo">Código: PROD${i.toString().padStart(2, '0')}</p>
       `;
-      contenedor.appendChild(div);
+      catalogo.appendChild(producto);
     }
   </script>
 
