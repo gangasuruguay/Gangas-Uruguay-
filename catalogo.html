@@ -3,84 +3,90 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Catálogo - Gangas Uruguay</title>
+  <title>Catálogo | Gangas Uruguay</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f3f3f3;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ffe5e5, #ffffff);
       color: #333;
     }
 
     header {
       background-color: #c40000;
       color: white;
-      padding: 2rem 1rem;
+      padding: 2rem;
       text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
 
     header img {
-      width: 160px;
-      border-radius: 14px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      width: 140px;
+      margin-bottom: 1rem;
     }
 
     h1 {
-      margin-top: 1rem;
+      margin: 0.5rem 0;
     }
 
     .catalogo {
-      max-width: 1200px;
-      margin: 2rem auto;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 2rem;
+      padding: 3rem 1rem;
     }
 
     .producto {
-      width: 200px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-      padding: 1rem;
-      text-align: center;
-      transition: transform 0.3s ease;
+      width: 220px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
     }
 
     .producto:hover {
-      transform: translateY(-5px) scale(1.03);
+      transform: scale(1.05);
     }
 
     .producto img {
       width: 100%;
-      border-radius: 8px;
+      height: 200px;
+      object-fit: cover;
     }
 
-    .producto h3 {
-      margin-top: 0.7rem;
+    .producto .info {
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .producto .info h3 {
+      margin: 0.5rem 0;
       font-size: 1.1rem;
       color: #c40000;
     }
 
-    .producto p.descripcion {
+    .producto .info p {
       font-size: 0.9rem;
       color: #555;
     }
 
-    .producto p.codigo {
-      margin-top: 0.5rem;
-      font-weight: bold;
-      color: #c40000;
+    footer {
+      background-color: #f2f2f2;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
     }
 
-    footer {
-      background-color: #eee;
+    .volver {
+      display: block;
       text-align: center;
-      padding: 1.5rem;
-      font-size: 0.9rem;
-      margin-top: 3rem;
+      margin-top: 2rem;
+      text-decoration: none;
+      font-weight: bold;
+      color: #c40000;
     }
   </style>
 </head>
@@ -89,25 +95,30 @@
   <header>
     <img src="logo.png.jpg" alt="Logo Gangas Uruguay" />
     <h1>Catálogo de Productos</h1>
-    <p>Ofertas desde $499 con entrega en todo el país</p>
+    <p>Elegí tus gangas favoritas a solo $499</p>
   </header>
 
-  <section class="catalogo" id="catalogo"></section>
+  <main class="catalogo" id="catalogo">
+    <!-- Los productos se insertan con JavaScript -->
+  </main>
+
+  <a class="volver" href="index.html">⬅ Volver a inicio</a>
 
   <footer>
-    © 2025 Gangas Uruguay | Desarrollado por Nicolás Fontana
+    © 2025 Gangas Uruguay - Todos los derechos reservados.
   </footer>
 
   <script>
-    const catalogo = document.getElementById('catalogo');
+    const catalogo = document.getElementById("catalogo");
     for (let i = 1; i <= 15; i++) {
-      const producto = document.createElement('div');
-      producto.className = 'producto';
+      const producto = document.createElement("div");
+      producto.className = "producto";
       producto.innerHTML = `
-        <img src="prod${i}/prod${i}.jpg" alt="Producto ${i}">
-        <h3>Producto ${i}</h3>
-        <p class="descripcion">Descripción breve del producto ${i}</p>
-        <p class="codigo">Código: PROD${i.toString().padStart(2, '0')}</p>
+        <img src="prod${i}.jpg" alt="Producto ${i}" />
+        <div class="info">
+          <h3>Producto ${i}</h3>
+          <p>Descripción breve del producto ${i}. ¡Aprovechá esta oferta!</p>
+        </div>
       `;
       catalogo.appendChild(producto);
     }
