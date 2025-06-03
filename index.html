@@ -3,115 +3,92 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gangas Uruguay | ¡Ofertas desde $499!</title>
+  <title>Gangas Uruguay</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom right, #fff4f4, #ffeaea);
+      font-family: 'Raleway', sans-serif;
+      background: linear-gradient(to bottom, #fceabb, #f8b500);
       color: #333;
     }
 
     header {
-      background-color: #c40000;
-      color: white;
       text-align: center;
-      padding: 3rem 1rem;
+      padding: 2rem 1rem;
+      background: #c40000;
+      color: white;
       position: relative;
-      overflow: hidden;
-    }
-
-    header::after {
-      content: "";
-      background: url('logo.png.jpg') center/contain no-repeat;
-      opacity: 0.15;
-      position: absolute;
-      inset: 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
 
     header img {
-      width: 130px;
-      border-radius: 15px;
-      z-index: 1;
-      position: relative;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      width: 140px;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.6);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    header img:hover {
+      transform: scale(1.05);
     }
 
     h1 {
+      font-size: 2.5rem;
       margin-top: 1rem;
-      font-size: 2.2rem;
-      z-index: 1;
-      position: relative;
     }
 
-    p.slogan {
-      font-style: italic;
-      font-size: 1.2rem;
-      z-index: 1;
-      position: relative;
+    .hero {
+      background: url('hero.gif') center/cover no-repeat;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 2rem;
+      text-shadow: 2px 2px 5px #000;
     }
 
-    .seccion {
-      padding: 2rem 1rem;
-      max-width: 1000px;
+    .section {
+      max-width: 960px;
       margin: auto;
+      padding: 2rem;
     }
 
-    .destacado {
-      background-color: white;
-      border-left: 6px solid #c40000;
-      padding: 1rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      margin: 2rem 0;
-      border-radius: 8px;
+    ul li::before {
+      content: "✅ ";
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
+    .cta {
+      text-align: center;
+      margin: 3rem 0;
     }
 
-    li::before {
-      content: "✔️";
-      margin-right: 8px;
-      color: #c40000;
-    }
-
-    .boton-catalogo {
-      display: inline-block;
-      background-color: #c40000;
+    .boton-wpp {
+      background: linear-gradient(to right, #25D366, #128C7E);
       color: white;
       padding: 1rem 2rem;
       border-radius: 10px;
+      font-size: 1.2rem;
       text-decoration: none;
-      font-weight: bold;
-      margin-top: 2rem;
-      transition: background 0.3s;
+      transition: background 0.3s ease;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
     }
 
-    .boton-catalogo:hover {
-      background-color: #a30000;
+    .boton-wpp:hover {
+      background: #075e54;
     }
 
     footer {
+      background: #222;
+      color: #eee;
       text-align: center;
       padding: 2rem 1rem;
-      background-color: #eee;
       font-size: 0.9rem;
     }
 
-    .redes a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #c40000;
-      font-weight: bold;
-    }
-
-    .decorativo {
-      text-align: center;
-      margin-top: 3rem;
-      font-size: 1.2rem;
-      color: #444;
+    a {
+      color: #ffd700;
     }
   </style>
 </head>
@@ -120,34 +97,37 @@
   <header>
     <img src="logo.png.jpg" alt="Logo Gangas Uruguay" />
     <h1>Gangas Uruguay</h1>
-    <p class="slogan">¡Las mejores ofertas desde $499 con entrega en todo el país!</p>
+    <p>Las mejores ofertas desde $499 con entrega en todo el país</p>
   </header>
 
-  <section class="seccion">
-    <div class="destacado">
-      <h2>¿Por qué elegir Gangas Uruguay?</h2>
-      <ul>
-        <li>🔥 Precios únicos desde <strong>$499</strong></li>
-        <li>🆕 Ofertas nuevas <strong>cada semana</strong></li>
-        <li>💬 Atención inmediata por <strong>WhatsApp</strong></li>
-        <li>🚚 Envíos rápidos y seguros a todo el país</li>
-      </ul>
-    </div>
+  <div class="hero">
+    ¡Ofertas que no vas a creer!
+  </div>
 
-    <div class="decorativo">
-      ✨ ¡Explorá nuestras gangas! ✨<br />
-      <a class="boton-catalogo" href="catalogo.html">📦 Ver Catálogo</a>
-    </div>
+  <section class="section">
+    <h2>¿Por qué elegirnos?</h2>
+    <ul>
+      <li>🔥 Productos exclusivos a solo $499</li>
+      <li>📅 Novedades y ofertas todos los días</li>
+      <li>💬 Atención rápida y personalizada por WhatsApp</li>
+      <li>🚚 Entregas confiables en todo el país</li>
+    </ul>
   </section>
 
-  <section class="seccion redes">
+  <div class="cta">
+    <a href="https://wa.me/59897213277" class="boton-wpp">💬 Hacenos tu pedido por WhatsApp</a>
+  </div>
+
+  <section class="section">
     <h2>Seguinos en nuestras redes</h2>
-    <a href="https://www.facebook.com/share/1YoChsDWQq/?mibextid=wwXIfr">Facebook Link 1</a>
-    <a href="https://www.facebook.com/share/1BmVUB7oPt/?mibextid=wwXIfr">Facebook Link 2</a>
+    <ul>
+      <li><a href="https://www.facebook.com/share/1YoChsDWQq/?mibextid=wwXIfr">Facebook Gangas Tacuarembó (link 1)</a></li>
+      <li><a href="https://www.facebook.com/share/1BmVUB7oPt/?mibextid=wwXIfr">Facebook Gangas Tacuarembó (link 2)</a></li>
+    </ul>
   </section>
 
   <footer>
-    © 2025 Gangas Uruguay | Desarrollado por Nicolás Fontana
+    © 2025 Gangas Uruguay | Desarrollado con ❤️ por Nicolás Fontana
   </footer>
 
 </body>
