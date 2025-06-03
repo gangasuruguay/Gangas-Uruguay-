@@ -4,105 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Catálogo | Gangas Uruguay</title>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Raleway', sans-serif;
-      background: #fafafa;
-      color: #333;
-    }
-
-    header {
-      background-color: #c40000;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-
-    header img {
-      width: 120px;
-      border-radius: 12px;
-      margin-bottom: 0.5rem;
-    }
-
-    h1 {
-      margin: 0.5rem 0;
-    }
-
-    .catalogo {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5rem;
-      padding: 2rem;
-    }
-
-    .producto {
-      background: white;
-      border-radius: 12px;
-      width: 200px;
-      padding: 1rem;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      position: relative;
-    }
-
-    .producto:hover {
-      transform: scale(1.05);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    }
-
-    .producto img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    .producto p {
-      margin-top: 0.5rem;
-      color: #c40000;
-      font-weight: bold;
-    }
-
-    .etiqueta {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      background: #ffcc00;
-      color: #000;
-      font-size: 0.75rem;
-      font-weight: bold;
-      padding: 0.2rem 0.5rem;
-      border-radius: 6px;
-    }
-
-    footer {
-      background: #222;
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.85rem;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" />
 </head>
-<body>
+<body onload="cargarCatalogo()">
 
-  <header>
-    <img src="logo.png.jpg" alt="Logo Gangas Uruguay" />
+  <header class="cabecera">
+    <img src="logo.png" alt="Gangas Uruguay" class="logo">
     <h1>Catálogo de Productos</h1>
-    <p>Ofertas únicas desde $499</p>
+    <input type="text" id="buscador" onkeyup="buscarProductos()" placeholder="🔍 Buscar productos...">
   </header>
 
-  <div class="catalogo" id="catalogo"></div>
+  <main>
+    <div class="catalogo" id="catalogo">
+      <!-- Productos generados automáticamente -->
+    </div>
+  </main>
 
   <footer>
-    © 2025 Gangas Uruguay | Desarrollado por Nicolás Fontana
+    <a href="index.html" class="volver">← Volver al inicio</a><br>
+    &copy; 2025 Gangas Uruguay
   </footer>
 
-  <script>
-    const catalogo = document.getElementById('catalogo');
-    for (let i = 1; i <= 15; i++) {
-      const prod = document.createElement('div');
-      prod.class
+  <script src="script.js"></script>
+</body>
+</html>
