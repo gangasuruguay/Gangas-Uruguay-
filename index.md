@@ -1,62 +1,70 @@
-![Gangas Uruguay Logo](logo.png.jpg)
+<p align="center">
+  <img src="logo.png.jpg" alt="Logo Gangas Uruguay" width="220" style="border-radius: 20px; box-shadow: 0 6px 16px rgba(196,0,0,0.5); margin-bottom: 20px;">
+</p>
 
-# 🛍️ Gangas Uruguay
+<h1 align="center">🛒 Gangas Uruguay</h1>
 
-Bienvenidos a **Gangas Uruguay**, tu espacio digital para descubrir productos innovadores a precios increíbles.  
-Ofrecemos una selección exclusiva de artículos a **solo $499**, con entrega a domicilio en todo el país.
-
----
-
-## 🚚 Envíos a todo Uruguay
-
-- Entrega rápida y segura 📦  
-- Coordinación directa por WhatsApp  
-- Opciones de pago flexibles  
-
-¿Vivís en el interior? ¡No hay problema! Coordinamos el envío desde **Tacuarembó**.
+<p align="center"><strong>¡Ofertas únicas desde $499 con entrega en todo el país!</strong></p>
 
 ---
 
-## 🛒 Nuestro catálogo
+## 🚀 ¿Qué ofrecemos?
 
-👉 Ingresá al catálogo actualizado de productos:
-
-📂 [Ver catálogo completo](./catalogo.html)
-
-Cada artículo cuenta con:
-
-- Imagen real del producto  
-- Precio final sin sorpresas  
-- Atención personalizada para responder tus dudas  
+- 🔥 **Productos seleccionados a precio único: $499**
+- 📦 **Envíos a todo Uruguay, con entrega segura**
+- 🕐 **Novedades y reposiciones todos los días**
+- 💬 **Atención rápida y personalizada por WhatsApp**
 
 ---
 
-## 📲 Hacenos tu pedido por WhatsApp
+## 🛍️ Nuestro catálogo
 
-Comunicate con nosotros directamente y sin vueltas.  
-Estamos para ayudarte, mostrarte más detalles o reservar tu pedido.
+Descubrí nuestros productos más destacados, con fotos reales y códigos únicos para facilitar tu compra.  
+Click en el botón para ver el catálogo completo:
 
-[![Contactar por WhatsApp](https://img.shields.io/badge/Enviar%20mensaje-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/59897213277)
+<p align="center">
+  <a href="catalogo.html" style="background-color:#c40000; color:white; padding:14px 24px; border-radius:10px; text-decoration:none; font-weight:bold; font-size:18px;">
+    📂 Ver catálogo completo
+  </a>
+</p>
 
 ---
 
-## 📸 Nuestras redes
+## 📲 ¿Querés hacer tu pedido?
 
-Seguinos en Facebook para no perderte novedades, nuevos ingresos, sorteos y más:
+Comunicate con nosotros por WhatsApp y realizá tu pedido al instante:  
+Consultas, reservas y detalles del producto — ¡te respondemos al toque!
 
-🔗 [Gangas Tacuarembó en Facebook (Link 1)](https://www.facebook.com/share/1CC7dQUoXw/?mibextid=wwXIfr)  
-🔗 [Gangas Tacuarembó en Facebook (Link 2)](https://www.facebook.com/share/1BmVUB7oPt/?mibextid=wwXIfr)
+<p align="center">
+  <a href="https://wa.me/59897213277" target="_blank">
+    <img src="https://img.shields.io/badge/Enviar%20mensaje-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp">
+  </a>
+</p>
+
+---
+
+## 🌐 Seguinos en redes
+
+Mantenete al tanto de todas nuestras ofertas, lanzamientos y sorteos:
+
+- 📘 [Facebook Gangas Tacuarembó (link 1)](https://www.facebook.com/share/1YoChsDWQq/?mibextid=wwXIfr)
+- 📘 [Facebook Gangas Tacuarembó (link 2)](https://www.facebook.com/share/1BmVUB7oPt/?mibextid=wwXIfr)
+- 🤝 Recomendá nuestro sitio a tus amigos y familia
 
 ---
 
 ## 🧾 Sobre nosotros
 
-**Gangas uruguay** es una tienda especializada en la reventa de productos funcionales, novedosos y prácticos.  
-Apuntamos a lo que realmente necesitás: **calidad, precio y entrega rápida.**
+**Gangas Uruguay** es una tienda digital orientada a la venta de productos prácticos, funcionales y novedosos.  
+Trabajamos con reposición constante, precios accesibles y un servicio de atención directa por WhatsApp.
 
-Gracias por confiar en nosotros.  
-¡Nos vemos en el catálogo!
+Nos enfocamos en tres pilares:
+- Calidad ✅
+- Precio justo ✅
+- Entrega rápida ✅
 
 ---
 
-© 2025 Gangas Uruguay — Todos los derechos reservados.
+<p align="center">
+  <sub>© 2025 Gangas Uruguay — Desarrollado con ❤️ por Nicolás Fontana</sub>
+</p>
