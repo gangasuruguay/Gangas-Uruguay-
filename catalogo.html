@@ -26,6 +26,32 @@
     &copy; 2025 Gangas Uruguay
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    function cargarCatalogo() {
+      const contenedor = document.getElementById('catalogo');
+      for (let i = 1; i <= 15; i++) {
+        const div = document.createElement('div');
+        div.className = 'producto';
+        const etiqueta = Math.random() > 0.5 ? '<div class="etiqueta">OFERTA</div>' : '<div class="etiqueta">NUEVO</div>';
+        div.innerHTML = `
+          ${etiqueta}
+          <img src="prod${i}.jpg" loading="lazy" alt="Producto ${i}">
+          <p>Producto ${i}</p>
+        `;
+        contenedor.appendChild(div);
+      }
+    }
+
+    function buscarProductos() {
+      const input = document.getElementById('buscador');
+      const filter = input.value.toUpperCase();
+      const productos = document.querySelectorAll('.producto');
+
+      productos.forEach(p => {
+        const texto = p.textContent || p.innerText;
+        p.style.display = texto.toUpperCase().includes(filter) ? "" : "none";
+      });
+    }
+  </script>
 </body>
 </html>
