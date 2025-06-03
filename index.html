@@ -9,75 +9,101 @@
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #fdfdfd;
+      background: linear-gradient(to bottom, #fff4f4, #ffe6e6);
       color: #333;
     }
 
     header {
-      text-align: center;
-      padding: 2rem 1rem;
       background-color: #c40000;
+      text-align: center;
+      padding: 3rem 1rem;
       color: white;
+      position: relative;
     }
 
     header img {
-      width: 180px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      width: 160px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     }
 
-    h1 {
+    header h1 {
       margin-top: 1rem;
-      font-size: 2.5rem;
+      font-size: 2.8rem;
+      text-shadow: 1px 1px 2px black;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-top: 0.5rem;
     }
 
     .section {
-      padding: 2rem 1rem;
-      max-width: 900px;
+      padding: 3rem 1rem;
+      max-width: 1000px;
       margin: auto;
     }
 
-    ul {
-      list-style-type: "✅ ";
-      padding-left: 1.5rem;
-      line-height: 1.8;
+    .hero {
+      text-align: center;
     }
 
-    .boton-catalogo, .boton-wpp {
+    .hero h2 {
+      font-size: 2rem;
+      color: #c40000;
+    }
+
+    .hero ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 1.5rem;
+      font-size: 1.2rem;
+    }
+
+    .hero li {
+      margin: 0.7rem 0;
+    }
+
+    .boton-rojo {
       display: inline-block;
-      margin: 1rem;
-      padding: 1rem 2rem;
-      font-size: 1.1rem;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 8px;
-    }
-
-    .boton-catalogo {
       background-color: #c40000;
       color: white;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 10px;
+      text-decoration: none;
+      margin-top: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: background 0.3s;
     }
 
-    .boton-catalogo:hover {
+    .boton-rojo:hover {
       background-color: #a00000;
     }
 
-    .boton-wpp {
-      background-color: #25D366;
-      color: white;
+    .redes {
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    .redes a {
+      display: inline-block;
+      margin: 0.5rem 1rem;
+      color: #c40000;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
     }
 
     footer {
-      text-align: center;
-      padding: 2rem 1rem;
       background-color: #eee;
-      font-size: 0.9rem;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.95rem;
     }
 
-    a {
-      color: #c40000;
-      text-decoration: none;
-    }
   </style>
 </head>
 <body>
@@ -85,35 +111,30 @@
   <header>
     <img src="logo.png.jpg" alt="Logo Gangas Uruguay" />
     <h1>Gangas Uruguay</h1>
-    <p>¡Las mejores ofertas desde <strong>$499</strong> con entrega en todo el país!</p>
+    <p>¡Ofertas explosivas desde $499 con envío en todo el país!</p>
   </header>
 
-  <section class="section">
-    <h2>¿Por qué elegirnos?</h2>
+  <section class="section hero">
+    <h2>¿Por qué elegir Gangas Uruguay?</h2>
     <ul>
-      <li>🔥 Ofertas exclusivas a solo $499</li>
-      <li>🚀 Entrega rápida en todo Uruguay</li>
-      <li>💬 Atención personalizada por WhatsApp</li>
-      <li>📆 Novedades nuevas todos los días</li>
+      <li>🔥 Productos únicos a solo <strong>$499</strong></li>
+      <li>🚀 Novedades <strong>todos los días</strong></li>
+      <li>💬 Atención personalizada vía <strong>WhatsApp</strong></li>
+      <li>🚚 Envíos rápidos a <strong>todo Uruguay</strong></li>
+      <li>📱 Publicamos nuestras mejores gangas en Facebook</li>
     </ul>
+    <a class="boton-rojo" href="catalogo.html">📦 Ver Catálogo de Productos</a>
   </section>
 
-  <section class="section" style="text-align: center;">
-    <a href="catalogo.html" class="boton-catalogo">🛒 Ver Catálogo de Productos</a>
-    <a href="https://wa.me/59897213277" class="boton-wpp">💬 Pedí por WhatsApp</a>
-  </section>
-
-  <section class="section">
-    <h2>Seguinos en nuestras redes</h2>
-    <ul>
-      <li><a href="https://www.facebook.com/share/1YoChsDWQq/?mibextid=wwXIfr" target="_blank">Facebook Gangas Tacuarembó (1)</a></li>
-      <li><a href="https://www.facebook.com/share/1BmVUB7oPt/?mibextid=wwXIfr" target="_blank">Facebook Gangas Tacuarembó (2)</a></li>
-    </ul>
+  <section class="redes">
+    <h2>📲 Seguinos en nuestras redes</h2>
+    <a href="https://www.facebook.com/share/1YoChsDWQq/?mibextid=wwXIfr">Facebook Gangas Tacuarembó (link 1)</a>
+    <a href="https://www.facebook.com/share/1BmVUB7oPt/?mibextid=wwXIfr">Facebook Gangas Tacuarembó (link 2)</a>
   </section>
 
   <footer>
-    © 2025 Gangas Uruguay | Desarrollado por Nicolás Fontana
+    © 2025 Gangas Uruguay | Sitio web creado por Nicolás Fontana
   </footer>
 
 </body>
-</html> 
+</html>
