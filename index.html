@@ -5,74 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gangas Uruguay</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
-      margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f8f8f8;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
       color: #333;
-    }
-
-    nav {
-      background-color: #c40000;
-      color: white;
-      padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      z-index: 1000;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-
-    nav img {
-      height: 60px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1rem;
-      margin-left: 2rem;
     }
 
     header {
       text-align: center;
-      padding: 3rem 1rem 2rem;
-      background-color: #fff;
+      padding: 2rem 1rem;
+      background-color: #c40000;
+      color: white;
     }
 
-    header h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.5rem;
+    header img {
+      width: 160px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
-    header p {
-      font-size: 1.2rem;
-      color: #555;
+    h1 {
+      margin-top: 1rem;
     }
 
     .section {
       padding: 2rem 1rem;
-      max-width: 1100px;
+      max-width: 900px;
       margin: auto;
-    }
-
-    h2 {
-      color: #c40000;
-      margin-bottom: 1rem;
-    }
-
-    ul {
-      list-style-type: '✅ ';
-      padding-left: 1.5rem;
     }
 
     .catalogo {
@@ -80,7 +41,6 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 1.5rem;
-      margin-top: 1rem;
     }
 
     .producto {
@@ -100,6 +60,8 @@
     .producto img {
       width: 100%;
       border-radius: 8px;
+      object-fit: cover;
+      height: 180px;
     }
 
     .producto p {
@@ -110,7 +72,7 @@
 
     .boton-wpp {
       display: inline-block;
-      margin: 2rem auto;
+      margin: 2rem 0;
       padding: 1rem 2rem;
       background-color: #25D366;
       color: white;
@@ -125,43 +87,23 @@
       padding: 2rem 1rem;
       background-color: #eee;
       font-size: 0.9rem;
-      margin-top: 3rem;
     }
 
     a {
       color: #c40000;
       text-decoration: none;
     }
-
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav a {
-        margin: 0.5rem 0 0 0;
-      }
-    }
   </style>
 </head>
 <body>
 
-  <nav>
-    <img src="logo.png.jpg" alt="Logo Gangas Uruguay">
-    <div>
-      <a href="#por-que">¿Por qué elegirnos?</a>
-      <a href="#catalogo">Catálogo</a>
-      <a href="#contacto">Contacto</a>
-    </div>
-  </nav>
-
   <header>
+    <img src="logo.png.jpg" alt="Logo Gangas Uruguay" />
     <h1>Gangas Uruguay</h1>
     <p>¡Las mejores ofertas desde $499 con entrega en todo el Uruguay!</p>
   </header>
 
-  <section class="section" id="por-que">
+  <section class="section">
     <h2>¿Por qué elegirnos?</h2>
     <ul>
       <li>🔥 Productos exclusivos a solo <strong>$499</strong></li>
@@ -171,22 +113,22 @@
     </ul>
   </section>
 
-  <section class="section" id="catalogo">
+  <section class="section">
     <h2>Catálogo de Productos</h2>
-    <div class="catalogo" id="contenedor-catalogo">
-      <!-- Los productos se insertan aquí dinámicamente -->
+    <div class="catalogo">
+      <!-- Los productos se insertan dinámicamente con JS -->
     </div>
   </section>
 
-  <section class="section" id="contacto" style="text-align: center;">
+  <section class="section" style="text-align: center;">
     <a href="https://wa.me/59897213277" class="boton-wpp">💬 Pedí por WhatsApp</a>
   </section>
 
   <section class="section">
     <h2>Seguinos en nuestras redes</h2>
     <ul>
-      <li><a href="https://www.facebook.com/share/1YoChsDWQq/?mibextid=wwXIfr" target="_blank">Facebook Gangas Tacuarembó</a></li>
-      <li><a href="https://www.facebook.com/share/1BmVUB7oPt/?mibextid=wwXIfr" target="_blank">Facebook Gangas Solymar</a></li>
+      <li><a href="https://www.facebook.com/share/1YoChsDWQq/?mibextid=wwXIfr">Facebook Gangas Tacuarembó (link 1)</a></li>
+      <li><a href="https://www.facebook.com/share/1BmVUB7oPt/?mibextid=wwXIfr">Facebook Gangas Tacuarembó (link 2)</a></li>
     </ul>
   </section>
 
@@ -195,15 +137,15 @@
   </footer>
 
   <script>
-    const catalogo = document.getElementById('contenedor-catalogo');
+    const catalogo = document.querySelector('.catalogo');
     for (let i = 1; i <= 15; i++) {
-      const div = document.createElement('div');
-      div.className = 'producto';
-      div.innerHTML = `
+      const prod = document.createElement('div');
+      prod.className = 'producto';
+      prod.innerHTML = `
         <img src="prod${i}/prod${i}.jpg" alt="Producto ${i}">
         <p>Código: PROD${i.toString().padStart(2, '0')}</p>
       `;
-      catalogo.appendChild(div);
+      catalogo.appendChild(prod);
     }
   </script>
 
