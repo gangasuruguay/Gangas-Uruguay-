@@ -1,139 +1,51 @@
 body {
-  margin: 0;
   font-family: 'Montserrat', sans-serif;
-  background-color: #fff;
-  color: #222;
-  transition: background 0.4s, color 0.4s;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #fff7f7, #ffecec);
+  color: #333;
 }
 
-body.dark-mode {
-  background-color: #111;
+.dark-mode {
+  background: #1e1e1e;
   color: #eee;
 }
 
-.cabecera {
+header.cabecera {
+  text-align: center;
+  padding: 2rem;
   background-color: #c40000;
   color: white;
-  padding: 1.5rem;
-  text-align: center;
   position: relative;
 }
 
 .logo {
-  max-width: 120px;
+  width: 120px;
   border-radius: 10px;
-  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-.intro, .redes {
-  text-align: center;
-  margin: 2rem;
-}
-
-.boton-destacado, .popup-boton {
-  background-color: #25D366;
-  color: white;
+.boton-destacado {
+  display: inline-block;
   padding: 1rem 2rem;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  cursor: pointer;
+  background-color: #c40000;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
   text-decoration: none;
+  margin-top: 1rem;
+  transition: background 0.3s;
 }
 
 .boton-destacado:hover {
-  background-color: #1ebe5b;
+  background-color: #a30000;
 }
 
-.modo-oscuro-switch {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 0.9rem;
-}
-
-.catalogo {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-  padding: 2rem;
-}
-
-.producto {
-  background: white;
-  border-radius: 12px;
-  width: 180px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  overflow: hidden;
-  position: relative;
-  transition: transform 0.3s;
-}
-
-.producto:hover {
-  transform: scale(1.05);
-}
-
-.producto img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  display: block;
-}
-
-.etiqueta {
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  background: #ff4d4d;
-  color: white;
-  padding: 3px 8px;
-  font-size: 0.75rem;
-  border-radius: 5px;
-}
-
-.producto p {
-  margin: 0.5rem;
-  font-weight: bold;
-  color: #c40000;
-}
-
-input#buscador {
-  margin: 1rem auto;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  display: block;
-  width: 90%;
-  max-width: 400px;
-}
-
-footer {
-  text-align: center;
-  padding: 2rem;
-  background: #f3f3f3;
-}
-
-.dark-mode footer {
-  background: #1e1e1e;
-}
-
-.volver {
-  text-decoration: none;
-  color: #c40000;
-  font-weight: bold;
-}
-
-/* Popup */
 .popup {
   display: none;
   position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
+  z-index: 1000;
+  top: 0; left: 0; right: 0; bottom: 0;
   background: rgba(0,0,0,0.6);
   justify-content: center;
   align-items: center;
@@ -144,13 +56,77 @@ footer {
   padding: 2rem;
   border-radius: 10px;
   text-align: center;
-  position: relative;
+  max-width: 90%;
+  font-size: 1.2rem;
 }
 
-.popup-content .cerrar {
+.popup-boton {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  background-color: #25D366;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cerrar {
   position: absolute;
-  top: 5px;
-  right: 10px;
+  right: 1rem;
+  top: 1rem;
   font-size: 1.5rem;
   cursor: pointer;
+}
+
+.catalogo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.producto {
+  width: 180px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.producto:hover {
+  transform: scale(1.05);
+}
+
+.producto img {
+  width: 100%;
+  border-radius: 8px;
+  height: 160px;
+  object-fit: cover;
+}
+
+.etiqueta {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #c40000;
+  color: white;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  border-radius: 5px;
+}
+
+input#buscador {
+  margin: 1rem auto;
+  display: block;
+  padding: 0.8rem;
+  font-size: 1rem;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
