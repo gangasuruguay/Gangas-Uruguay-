@@ -4,134 +4,208 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gangas Uruguay</title>
-  <link rel="icon" href="logo.png.jpg" type="image/jpeg">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f4f4;
+      background-color: #f8f8f8;
       color: #333;
+    }
+
+    nav {
+      background-color: #c40000;
+      color: white;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
       display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    nav img {
+      height: 60px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      margin-left: 2rem;
     }
 
     header {
       text-align: center;
-      padding: 3rem 1rem;
-      background: linear-gradient(135deg, #c40000, #ff5a5a);
-      color: white;
-    }
-
-    header img {
-      width: 200px;
-      border-radius: 20px;
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
-      margin-bottom: 1rem;
+      padding: 3rem 1rem 2rem;
+      background-color: #fff;
     }
 
     header h1 {
-      font-size: 2.4rem;
-      margin: 0.5rem 0;
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
     }
 
     header p {
       font-size: 1.2rem;
+      color: #555;
     }
 
-    main {
-      flex-grow: 1;
-      max-width: 960px;
+    .section {
+      padding: 2rem 1rem;
+      max-width: 1100px;
       margin: auto;
-      padding: 2rem;
     }
 
-    .seccion {
-      margin-bottom: 2.5rem;
-    }
-
-    .seccion h2 {
+    h2 {
       color: #c40000;
+      margin-bottom: 1rem;
     }
 
     ul {
-      padding-left: 1.2rem;
+      list-style-type: '✅ ';
+      padding-left: 1.5rem;
     }
 
-    .boton {
-      display: inline-block;
-      background-color: #c40000;
-      color: white;
-      padding: 1rem 2rem;
-      font-size: 1.1rem;
+    .catalogo {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .producto {
+      width: 180px;
+      background: white;
       border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 1rem;
+      transition: transform 0.2s;
+    }
+
+    .producto:hover {
+      transform: scale(1.05);
+    }
+
+    .producto img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .producto p {
+      margin-top: 0.5rem;
+      font-weight: bold;
+      color: #c40000;
+    }
+
+    .boton-wpp {
+      display: inline-block;
+      margin: 2rem auto;
+      padding: 1rem 2rem;
+      background-color: #25D366;
+      color: white;
+      border-radius: 8px;
+      font-size: 1.1rem;
       text-decoration: none;
       font-weight: bold;
-      transition: background 0.3s;
-    }
-
-    .boton:hover {
-      background-color: #a30000;
-    }
-
-    .whatsapp {
-      margin-top: 2rem;
-      display: inline-block;
     }
 
     footer {
       text-align: center;
-      padding: 1.5rem;
-      background-color: #ddd;
+      padding: 2rem 1rem;
+      background-color: #eee;
       font-size: 0.9rem;
+      margin-top: 3rem;
+    }
+
+    a {
+      color: #c40000;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav a {
+        margin: 0.5rem 0 0 0;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>
+  <nav>
     <img src="logo.png.jpg" alt="Logo Gangas Uruguay">
+    <div>
+      <a href="#por-que">¿Por qué elegirnos?</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </nav>
+
+  <header>
     <h1>Gangas Uruguay</h1>
-    <p>Ofertas desde $499 con entrega a todo el país</p>
+    <p>¡Las mejores ofertas desde $499 con entrega en todo el Uruguay!</p>
   </header>
 
-  <main>
-    <section class="seccion">
-      <h2>¿Por qué elegirnos?</h2>
-      <ul>
-        <li>🔥 Productos exclusivos a <strong>$499</strong></li>
-        <li>📦 Entregas en todo Uruguay</li>
-        <li>🕐 Novedades todos los días</li>
-        <li>💬 Atención rápida por WhatsApp</li>
-      </ul>
-    </section>
+  <section class="section" id="por-que">
+    <h2>¿Por qué elegirnos?</h2>
+    <ul>
+      <li>🔥 Productos exclusivos a solo <strong>$499</strong></li>
+      <li>📅 Novedades y ofertas <strong>todos los días</strong></li>
+      <li>💬 Atención rápida y personalizada por <strong>WhatsApp</strong></li>
+      <li>🚚 Entregas confiables en <strong>todo el país</strong></li>
+    </ul>
+  </section>
 
-    <section class="seccion">
-      <h2>📂 Nuestro catálogo</h2>
-      <p>Explorá los 15 productos disponibles con imágenes reales y códigos únicos. Hacé clic en el botón para ver el catálogo completo:</p>
-      <a class="boton" href="catalogo.html">Ver catálogo completo</a>
-    </section>
+  <section class="section" id="catalogo">
+    <h2>Catálogo de Productos</h2>
+    <div class="catalogo" id="contenedor-catalogo">
+      <!-- Los productos se insertan aquí dinámicamente -->
+    </div>
+  </section>
 
-    <section class="seccion">
-      <h2>📲 Pedí por WhatsApp</h2>
-      <p>Consultas y pedidos instantáneos desde tu celular:</p>
-      <a href="https://wa.me/59897213277" target="_blank" class="whatsapp">
-        <img src="https://img.shields.io/badge/Enviar%20mensaje-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp">
-      </a>
-    </section>
+  <section class="section" id="contacto" style="text-align: center;">
+    <a href="https://wa.me/59897213277" class="boton-wpp">💬 Pedí por WhatsApp</a>
+  </section>
 
-    <section class="seccion">
-      <h2>🌐 Seguinos en redes</h2>
-      <ul>
-        <li><a href="https://www.facebook.com/share/1YoChsDWQq/?mibextid=wwXIfr" target="_blank">Facebook Gangas Tacuarembó (link 1)</a></li>
-        <li><a href="https://www.facebook.com/share/1BmVUB7oPt/?mibextid=wwXIfr" target="_blank">Facebook Gangas Tacuarembó (link 2)</a></li>
-      </ul>
-    </section>
-  </main>
+  <section class="section">
+    <h2>Seguinos en nuestras redes</h2>
+    <ul>
+      <li><a href="https://www.facebook.com/share/1YoChsDWQq/?mibextid=wwXIfr" target="_blank">Facebook Gangas Tacuarembó</a></li>
+      <li><a href="https://www.facebook.com/share/1BmVUB7oPt/?mibextid=wwXIfr" target="_blank">Facebook Gangas Solymar</a></li>
+    </ul>
+  </section>
 
   <footer>
-    © 2025 Gangas Uruguay — Desarrollado con ❤️ por Nicolás Fontana
+    © 2025 Gangas Uruguay | Desarrollado por Nicolás Fontana
   </footer>
 
+  <script>
+    const catalogo = document.getElementById('contenedor-catalogo');
+    for (let i = 1; i <= 15; i++) {
+      const div = document.createElement('div');
+      div.className = 'producto';
+      div.innerHTML = `
+        <img src="prod${i}/prod${i}.jpg" alt="Producto ${i}">
+        <p>Código: PROD${i.toString().padStart(2, '0')}</p>
+      `;
+      catalogo.appendChild(div);
+    }
+  </script>
+
 </body>
-</html> 
+</html>
