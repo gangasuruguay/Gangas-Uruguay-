@@ -2,11 +2,10 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Catálogo | Gangas Uruguay</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
     :root {
       --color-primario: #007aff;
@@ -163,37 +162,40 @@
 
   <header>
     <div style="display: flex; align-items: center;">
-      <img src="logo.png.jpg" alt="Logo">
+      <img src="logo.jpg" alt="Logo">
       <h1>Gangas Uruguay</h1>
     </div>
   </header>
 
   <section class="catalogo">
     <!-- Productos generados -->
-    ${[...Array(15)].map((_, i) => `
-      <div class="producto">
-        <span class="etiqueta">${i % 3 === 0 ? 'Oferta' : i % 5 === 0 ? 'Nuevo' : 'Popular'}</span>
-        <a href="#modal${i + 1}">
-          <img src="prod${i + 1}.jpg" alt="Producto ${i + 1}" />
-        </a>
-        <div class="info">
-          <h2>Producto ${i + 1}</h2>
-          <p>Este es un excelente producto ${i + 1} con calidad garantizada y precio accesible.</p>
-        </div>
+    <!-- Asegúrate de tener las imágenes prod1.jpg a prod15.jpg en la misma carpeta -->
+    <!-- Puedes personalizar las etiquetas según tus necesidades -->
+    <!-- Ejemplo de producto -->
+    <div class="producto">
+      <span class="etiqueta">Oferta</span>
+      <a href="#modal1">
+        <img src="prod1.jpg" alt="Producto 1" />
+      </a>
+      <div class="info">
+        <h2>Producto 1</h2>
+        <p>Descripción breve del producto 1. Calidad garantizada y precio accesible.</p>
       </div>
-    `).join('')}
+    </div>
+    <!-- Repite el bloque anterior para los productos 2 al 15, cambiando los números y detalles según corresponda -->
   </section>
 
   <!-- Modales -->
-  ${[...Array(15)].map((_, i) => `
-    <div id="modal${i + 1}" class="modal">
-      <a href="#" class="close-modal">&times;</a>
-      <img src="prod${i + 1}.jpg" alt="Producto ${i + 1}">
-    </div>
-  `).join('')}
+  <!-- Asegúrate de tener las imágenes prod1.jpg a prod15.jpg en la misma carpeta -->
+  <!-- Ejemplo de modal -->
+  <div id="modal1" class="modal">
+    <a href="#" class="close-modal">&times;</a>
+    <img src="prod1.jpg" alt="Producto 1">
+  </div>
+  <!-- Repite el bloque anterior para los modales de productos 2 al 15, cambiando los números según corresponda -->
 
   <footer>
-    <p>&copy; ${new Date().getFullYear()} Gangas Uruguay. Todos los derechos reservados.</p>
+    <p>&copy; 2025 Gangas Uruguay. Todos los derechos reservados.</p>
     <div class="social">
       <a href="#"><i class="fab fa-facebook-square"></i></a>
       <a href="#"><i class="fab fa-instagram"></i></a>
