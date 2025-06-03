@@ -8,119 +8,149 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #ffe5e5, #ffffff);
+      background: linear-gradient(to right, #fff0f0, #ffffff);
       color: #333;
+      overflow-x: hidden;
     }
 
     header {
-      background-color: #c40000;
+      background: linear-gradient(135deg, #c40000, #ff4d4d);
       color: white;
-      padding: 2rem;
+      padding: 2rem 1rem;
       text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      position: relative;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     }
 
     header img {
-      width: 140px;
-      margin-bottom: 1rem;
+      width: 180px;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+      animation: pulse 2s infinite;
     }
 
-    h1 {
-      margin: 0.5rem 0;
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin: 1rem 0 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    .volver {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: white;
+      color: #c40000;
+      padding: 0.5rem 1.2rem;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      transition: background 0.3s;
+    }
+
+    .volver:hover {
+      background: #ffe6e6;
+    }
+
+    .section {
+      padding: 3rem 1rem;
+      max-width: 1300px;
+      margin: auto;
     }
 
     .catalogo {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 2rem;
-      padding: 3rem 1rem;
+      justify-items: center;
+      align-items: stretch;
     }
 
     .producto {
-      width: 220px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      overflow: hidden;
-      transition: transform 0.3s;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      padding: 1rem;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
     }
 
     .producto:hover {
-      transform: scale(1.05);
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.2);
     }
 
     .producto img {
       width: 100%;
-      height: 200px;
-      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 1rem;
     }
 
-    .producto .info {
-      padding: 1rem;
-      text-align: center;
-    }
-
-    .producto .info h3 {
-      margin: 0.5rem 0;
+    .producto h3 {
       font-size: 1.1rem;
+      margin: 0.5rem 0 0.2rem;
       color: #c40000;
     }
 
-    .producto .info p {
-      font-size: 0.9rem;
+    .producto p {
+      margin: 0;
+      font-size: 0.95rem;
       color: #555;
     }
 
     footer {
-      background-color: #f2f2f2;
-      padding: 2rem;
       text-align: center;
+      padding: 2rem 1rem;
+      background-color: #eee;
       font-size: 0.9rem;
-      color: #777;
-    }
-
-    .volver {
-      display: block;
-      text-align: center;
-      margin-top: 2rem;
-      text-decoration: none;
-      font-weight: bold;
-      color: #c40000;
+      margin-top: 3rem;
     }
   </style>
 </head>
 <body>
 
   <header>
+    <a href="index.html" class="volver">⬅ Volver</a>
     <img src="logo.png.jpg" alt="Logo Gangas Uruguay" />
     <h1>Catálogo de Productos</h1>
-    <p>Elegí tus gangas favoritas a solo $499</p>
+    <p>🎯 ¡Elegí tu ganga y pedí por WhatsApp en segundos!</p>
   </header>
 
-  <main class="catalogo" id="catalogo">
-    <!-- Los productos se insertan con JavaScript -->
-  </main>
-
-  <a class="volver" href="index.html">⬅ Volver a inicio</a>
+  <section class="section">
+    <div class="catalogo" id="catalogo">
+      <!-- Productos cargados por JS -->
+    </div>
+  </section>
 
   <footer>
-    © 2025 Gangas Uruguay - Todos los derechos reservados.
+    © 2025 Gangas Uruguay | Desarrollado por Nicolás Fontana 💼
   </footer>
 
   <script>
     const catalogo = document.getElementById("catalogo");
+
     for (let i = 1; i <= 15; i++) {
-      const producto = document.createElement("div");
-      producto.className = "producto";
-      producto.innerHTML = `
-        <img src="prod${i}.jpg" alt="Producto ${i}" />
-        <div class="info">
-          <h3>Producto ${i}</h3>
-          <p>Descripción breve del producto ${i}. ¡Aprovechá esta oferta!</p>
-        </div>
+      const div = document.createElement("div");
+      div.className = "producto";
+      div.innerHTML = `
+        <img src="prod${i}.jpg/prod${i}.jpg" alt="Producto ${i}">
+        <h3>Producto ${i}</h3>
+        <p>Código: PROD${i.toString().padStart(2, '0')}</p>
       `;
-      catalogo.appendChild(producto);
+      catalogo.appendChild(div);
     }
   </script>
 
