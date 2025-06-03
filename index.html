@@ -1,105 +1,154 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gangas Uruguay</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background-color: #fff;
+      padding: 0;
+      background-color: #f9f9f9;
       color: #333;
     }
 
     header {
-      background-color: #d80027;
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: #c40000;
       color: white;
-      padding: 30px 20px;
-      text-align: center;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
+    header img {
+      width: 120px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
-    header p {
-      margin: 10px 0 0;
-      font-size: 1.2em;
-    }
-
-    main {
-      padding: 40px 20px;
-      text-align: center;
+    h1 {
+      margin-top: 1rem;
     }
 
     .section {
-      margin-bottom: 40px;
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin: auto;
     }
 
-    .section h2 {
-      color: #d80027;
-      font-size: 1.8em;
-      margin-bottom: 10px;
+    .catalogo {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
     }
 
-    .contact, .social a {
-      display: block;
-      margin: 10px 0;
-      font-size: 1.1em;
-      color: #d80027;
+    .producto {
+      width: 180px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 1rem;
+      transition: transform 0.2s;
+    }
+
+    .producto:hover {
+      transform: scale(1.05);
+    }
+
+    .producto img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .producto p {
+      margin-top: 0.5rem;
+      font-weight: bold;
+      color: #c40000;
+    }
+
+    .boton-wpp {
+      display: inline-block;
+      margin: 2rem 0;
+      padding: 1rem 2rem;
+      background-color: #25D366;
+      color: white;
+      border-radius: 8px;
+      font-size: 1.1rem;
       text-decoration: none;
-    }
-
-    .contact:hover, .social a:hover {
-      text-decoration: underline;
+      font-weight: bold;
     }
 
     footer {
-      background-color: #f2f2f2;
-      color: #555;
       text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
+      padding: 2rem 1rem;
+      background-color: #eee;
+      font-size: 0.9rem;
     }
 
-    img.logo {
-      max-width: 150px;
-      margin-bottom: 20px;
+    a {
+      color: #c40000;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="https://raw.githubusercontent.com/gangasuruguay/Gangas-Uruguay-/main/logo.png" alt="Logo Gangas" class="logo">
+    <img src="logo.png.jpg" alt="Logo Gangas Uruguay" />
     <h1>Gangas Uruguay</h1>
-    <p>Tu tienda de confianza en Tacuarembó</p>
+    <p>¡Las mejores ofertas desde $499 con entrega en todo el Uruguay!</p>
   </header>
 
-  <main>
-    <div class="section">
-      <h2>¿Qué ofrecemos?</h2>
-      <p>Reventa de artículos nuevos y usados en excelente estado: ropa, tecnología, hogar, y mucho más.</p>
-    </div>
+  <section class="section">
+    <h2>¿Por qué elegirnos?</h2>
+    <ul>
+      <li>🔥 Productos exclusivos a solo <strong>$499</strong></li>
+      <li>📅 Novedades y ofertas <strong>todos los días</strong></li>
+      <li>💬 Atención rápida y personalizada por <strong>WhatsApp</strong></li>
+      <li>🚚 Entregas confiables en <strong>todo el país</strong></li>
+    </ul>
+  </section>
 
-    <div class="section">
-      <h2>Contacto</h2>
-      <a class="contact" href="https://wa.me/59897213277">📱 WhatsApp: 097 213 277</a>
-      <a class="contact" href="mailto:gangasuruguay@gmail.com">✉️ Email: gangasuruguay@gmail.com</a>
+  <section class="section">
+    <h2>Catálogo de Productos</h2>
+    <div class="catalogo">
+      <!-- Se generan automáticamente 15 productos -->
+      <!-- Puedes aumentar o reducir según necesidad -->
+      <!-- Se asume que prod1.jpg hasta prod15.jpg están en la misma carpeta -->
+      <!-- Código JS embebido abajo lo hará dinámicamente -->
     </div>
+  </section>
 
-    <div class="section social">
-      <h2>Redes Sociales</h2>
-      <a href="https://www.facebook.com/profile.php?id=100063789170798" target="_blank">🌐 Facebook: Gangas Tacuarembó</a>
-    </div>
-  </main>
+  <section class="section" style="text-align: center;">
+    <a href="https://wa.me/59897213277" class="boton-wpp">💬 Pedí por WhatsApp</a>
+  </section>
+
+  <section class="section">
+    <h2>Seguinos en nuestras redes</h2>
+    <ul>
+      <li><a href="https://www.facebook.com/share/1YoChsDWQq/?mibextid=wwXIfr">Facebook Gangas Tacuarembó (link 1)</a></li>
+      <li><a href="https://www.facebook.com/share/1BmVUB7oPt/?mibextid=wwXIfr">Facebook Gangas Tacuarembó (link 2)</a></li>
+    </ul>
+  </section>
 
   <footer>
-    &copy; 2025 Gangas Uruguay. Todos los derechos reservados.
+    © 2025 Gangas Uruguay | Desarrollado por Nicolás Fontana
   </footer>
+
+  <script>
+    const catalogo = document.querySelector('.catalogo');
+    for (let i = 1; i <= 15; i++) {
+      const prod = document.createElement('div');
+      prod.className = 'producto';
+      prod.innerHTML = `
+        <img src="prod${i}.jpg" alt="Producto ${i}">
+        <p>Código: PROD${i.toString().padStart(2, '0')}</p>
+      `;
+      catalogo.appendChild(prod);
+    }
+  </script>
 
 </body>
 </html>
