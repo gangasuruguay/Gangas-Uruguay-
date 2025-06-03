@@ -4,114 +4,167 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Catálogo | Gangas Uruguay</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap"/>
   <style>
     body {
-      font-family: 'Rubik', sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f5f5f5;
+      background: linear-gradient(to bottom right, #fff7f7, #ffecec);
+      color: #333;
     }
 
     header {
-      background: #c40000;
-      color: white;
-      padding: 2rem 1rem;
       text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      padding: 2rem 1rem;
+      background-color: #c40000;
+      color: white;
+      position: relative;
     }
 
     header img {
-      height: 80px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+      width: 130px;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     }
 
-    header h1 {
-      margin-top: 1rem;
-      font-size: 2.2rem;
+    h1 {
+      font-size: 2.5rem;
+      margin: 1rem 0 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+
+    .section {
+      padding: 2rem 1rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #c40000;
+      margin-bottom: 1rem;
+      text-align: center;
     }
 
     .catalogo {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 2rem;
-      padding: 3rem 1rem;
+      gap: 1.5rem;
     }
 
     .producto {
-      width: 220px;
+      width: 180px;
       background: white;
-      border-radius: 12px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-      overflow: hidden;
-      transition: transform 0.3s ease;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
       text-align: center;
+      padding: 1rem;
+      transition: transform 0.2s ease;
     }
 
     .producto:hover {
-      transform: scale(1.05);
+      transform: scale(1.07);
     }
 
     .producto img {
       width: 100%;
-      height: 200px;
+      border-radius: 8px;
       object-fit: cover;
-      display: block;
+      height: 160px;
     }
 
     .producto p {
-      padding: 1rem;
+      margin-top: 0.5rem;
       font-weight: bold;
       color: #c40000;
-      font-size: 1.1rem;
+    }
+
+    .boton-wpp {
+      display: inline-block;
+      margin: 2rem auto;
+      padding: 1rem 2rem;
+      background-color: #25D366;
+      color: white;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .boton-wpp:hover {
+      background-color: #1ebe5b;
+    }
+
+    .redes ul {
+      list-style: none;
+      padding-left: 0;
+      text-align: center;
+    }
+
+    .redes li {
+      margin: 0.5rem 0;
+    }
+
+    .redes a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #c40000;
     }
 
     footer {
-      background: #eee;
+      text-align: center;
       padding: 2rem 1rem;
-      text-align: center;
+      background-color: #f3f3f3;
       font-size: 0.9rem;
-    }
-
-    .volver {
-      display: block;
-      text-align: center;
-      margin: 2rem auto 0;
-      color: #c40000;
-      font-weight: bold;
-      text-decoration: none;
-      font-size: 1.2rem;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="logo.jpg" alt="Logo Gangas Uruguay">
-    <h1>Catálogo Oficial de Gangas Uruguay</h1>
+    <img src="logo.png.jpg" alt="Logo Gangas Uruguay" />
+    <h1>Gangas Uruguay</h1>
+    <p>Ofertas increíbles desde <strong>$499</strong> — ¡Envíos a todo el país!</p>
   </header>
 
-  <div class="catalogo" id="catalogo"></div>
+  <section class="section">
+    <h2>🔥 Nuestro catálogo exclusivo 🔥</h2>
+    <div class="catalogo">
+      <!-- Se generan automáticamente los productos -->
+    </div>
+  </section>
 
-  <a class="volver" href="index.html">⬅️ Volver al inicio</a>
+  <div style="text-align: center;">
+    <a href="https://wa.me/59897213277" class="boton-wpp">💬 Pedí por WhatsApp</a>
+  </div>
+
+  <section class="section redes">
+    <h2>📱 Seguinos en nuestras redes</h2>
+    <ul>
+      <li><a href="https://www.facebook.com/share/1YoChsDWQq/?mibextid=wwXIfr" target="_blank">Facebook Gangas Tacuarembó (link 1)</a></li>
+      <li><a href="https://www.facebook.com/share/1BmVUB7oPt/?mibextid=wwXIfr" target="_blank">Facebook Gangas Tacuarembó (link 2)</a></li>
+    </ul>
+  </section>
 
   <footer>
-    © 2025 Gangas Uruguay | Desarrollado por Nicolás Fontana
+    © 2025 Gangas Uruguay | Desarrollado con ❤️ por Nicolás Fontana
   </footer>
 
   <script>
-    const catalogo = document.getElementById('catalogo');
-
+    const catalogo = document.querySelector('.catalogo');
     for (let i = 1; i <= 15; i++) {
-      const div = document.createElement('div');
-      div.className = 'producto';
-      div.innerHTML = `
-        <img src="prod${i}/prod${i}.jpg" alt="Producto ${i}">
+      const prod = document.createElement('div');
+      prod.className = 'producto';
+      prod.innerHTML = `
+        <img src="prod${i}.jpg" alt="Producto ${i}">
         <p>Código: PROD${i.toString().padStart(2, '0')}</p>
       `;
-      catalogo.appendChild(div);
+      catalogo.appendChild(prod);
     }
   </script>
 
