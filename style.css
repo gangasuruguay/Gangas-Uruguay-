@@ -1,13 +1,15 @@
+/* Estilos generales */
 body {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
   background: linear-gradient(to bottom right, #fff7f7, #ffecec);
   color: #333;
+  transition: background 0.5s, color 0.5s;
 }
 
 .dark-mode {
-  background: #1e1e1e;
+  background: #121212;
   color: #eee;
 }
 
@@ -23,6 +25,11 @@ header.cabecera {
   width: 120px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: rotate(5deg) scale(1.1);
 }
 
 .boton-destacado {
@@ -39,6 +46,7 @@ header.cabecera {
 
 .boton-destacado:hover {
   background-color: #a30000;
+  cursor: pointer;
 }
 
 .popup {
@@ -49,6 +57,12 @@ header.cabecera {
   background: rgba(0,0,0,0.6);
   justify-content: center;
   align-items: center;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
 .popup-content {
@@ -58,6 +72,14 @@ header.cabecera {
   text-align: center;
   max-width: 90%;
   font-size: 1.2rem;
+  position: relative;
+  box-shadow: 0 0 15px rgba(196,0,0,0.7);
+  animation: scaleUp 0.3s ease forwards;
+}
+
+@keyframes scaleUp {
+  from {transform: scale(0.8);}
+  to {transform: scale(1);}
 }
 
 .popup-boton {
@@ -69,6 +91,12 @@ header.cabecera {
   border-radius: 10px;
   text-decoration: none;
   font-weight: bold;
+  transition: background 0.3s;
+}
+
+.popup-boton:hover {
+  background-color: #1ebe5b;
+  cursor: pointer;
 }
 
 .cerrar {
@@ -77,6 +105,9 @@ header.cabecera {
   top: 1rem;
   font-size: 1.5rem;
   cursor: pointer;
+  color: #c40000;
+  font-weight: bold;
+  user-select: none;
 }
 
 .catalogo {
@@ -95,11 +126,13 @@ header.cabecera {
   text-align: center;
   padding: 1rem;
   position: relative;
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
 }
 
 .producto:hover {
   transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
 }
 
 .producto img {
@@ -107,6 +140,11 @@ header.cabecera {
   border-radius: 8px;
   height: 160px;
   object-fit: cover;
+  transition: filter 0.3s ease;
+}
+
+.producto:hover img {
+  filter: brightness(1.1);
 }
 
 .etiqueta {
@@ -118,6 +156,7 @@ header.cabecera {
   padding: 4px 8px;
   font-size: 0.75rem;
   border-radius: 5px;
+  user-select: none;
 }
 
 input#buscador {
@@ -129,4 +168,40 @@ input#buscador {
   max-width: 400px;
   border-radius: 8px;
   border: 1px solid #ccc;
+  transition: border-color 0.3s ease;
+}
+
+input#buscador:focus {
+  border-color: #c40000;
+  outline: none;
+}
+
+.redes ul {
+  list-style: none;
+  padding-left: 0;
+  text-align: center;
+}
+
+.redes li {
+  margin: 0.5rem 0;
+}
+
+.redes a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #c40000;
+  transition: color 0.3s;
+}
+
+.redes a:hover {
+  color: #a30000;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #f3f3f3;
+  font-size: 0.9rem;
+  color: #555;
+  user-select: none;
 }
