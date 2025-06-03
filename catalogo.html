@@ -89,19 +89,14 @@
     © 2025 Gangas Uruguay | Desarrollado por Nicolás Fontana
   </footer>
 
-  <script>
-  const catalogo = document.querySelector('.catalogo');
-  for (let i = 1; i <= 15; i++) {
-    const prod = document.createElement('div');
-    prod.className = 'producto';
-    const carpeta = `prod${i}`;
-    prod.innerHTML = `
-      <img src="${carpeta}/prod${i}.jpg" alt="Producto ${i}">
-      <p>Código: PROD${i.toString().padStart(2, '0')}</p>
-    `;
-    catalogo.appendChild(prod);
-  }
-</script>
+  
 
-</body>
-</html>
+</  <section class="section">
+    <h2>Catálogo de Productos</h2>
+    <div class="catalogo">
+      <!-- Se generan automáticamente 15 productos -->
+      <!-- Puedes aumentar o reducir según necesidad -->
+      <!-- Se asume que prod1.jpg hasta prod15.jpg están en la misma carpeta -->
+      <!-- Código JS embebido abajo lo hará dinámicamente -->
+    </div>
+  </section> 
