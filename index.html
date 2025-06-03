@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="favicon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Coloca aquí el contenido de style.css si también lo querés embebido */
+  </style>
 </head>
 <body onload="inicializarSitio()">
 
@@ -46,6 +49,50 @@
     <div class="contador" id="contador"></div>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // Modo oscuro
+    document.addEventListener('DOMContentLoaded', () => {
+      const modoOscuroSwitch = document.getElementById('modoOscuroSwitch');
+      const modo = localStorage.getItem('modoOscuro');
+
+      if (modo === 'on') {
+        document.body.classList.add('dark-mode');
+        modoOscuroSwitch.checked = true;
+      }
+
+      if (modoOscuroSwitch) {
+        modoOscuroSwitch.addEventListener('change', () => {
+          document.body.classList.toggle('dark-mode');
+          localStorage.setItem('modoOscuro', document.body.classList.contains('dark-mode') ? 'on' : 'off');
+        });
+      }
+    });
+
+    // Popup de descuento
+    function inicializarSitio() {
+      const popup = document.getElementById('popup-descuento');
+      if (!localStorage.getItem('popupMostrado')) {
+        popup.style.display = 'flex';
+        localStorage.setItem('popupMostrado', 'true');
+      }
+      mostrarContador();
+    }
+
+    // Cerrar popup
+    function cerrarPopup() {
+      document.getElementById('popup-descuento').style.display = 'none';
+    }
+
+    // Contador de visitas
+    function mostrarContador() {
+      let visitas = localStorage.getItem('visitas') || 0;
+      visitas++;
+      localStorage.setItem('visitas', visitas);
+      const contador = document.getElementById('contador');
+      if (contador) {
+        contador.innerText = `👀 Visitas en este navegador: ${visitas}`;
+      }
+    }
+  </script>
 </body>
 </html>
