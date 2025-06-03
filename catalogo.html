@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Catálogo | Gangas Uruguay</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     :root {
-      --color-primario: #1e90ff;
-      --color-secundario: #f5f5f5;
+      --color-primario: #007aff;
+      --color-secundario: #f8f9fa;
       --color-fondo: #ffffff;
       --color-texto: #333;
-      --fuente-principal: 'Roboto', sans-serif;
+      --color-hover: #0056b3;
+      --sombra: rgba(0, 0, 0, 0.1);
     }
 
     * {
@@ -21,102 +24,182 @@
     }
 
     body {
-      font-family: var(--fuente-principal);
+      font-family: 'Rubik', sans-serif;
       background-color: var(--color-secundario);
       color: var(--color-texto);
+      line-height: 1.6;
     }
 
     header {
-      background-color: var(--color-primario);
-      padding: 1rem;
+      background: var(--color-primario);
+      color: white;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      color: white;
+      padding: 1rem 2rem;
+      box-shadow: 0 4px 6px var(--sombra);
     }
 
     header img {
       height: 50px;
+      border-radius: 6px;
     }
 
     header h1 {
-      font-size: 1.5rem;
-    }
-
-    main {
-      padding: 2rem;
+      font-size: 1.8rem;
+      margin-left: 1rem;
     }
 
     .catalogo {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
     }
 
     .producto {
-      background-color: var(--color-fondo);
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 1rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease;
+      background: var(--color-fondo);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px var(--sombra);
+      position: relative;
+      transition: transform 0.3s ease;
     }
 
     .producto:hover {
-      transform: translateY(-5px);
+      transform: scale(1.03);
     }
 
     .producto img {
       width: 100%;
-      height: auto;
-      border-radius: 5px;
+      height: 220px;
+      object-fit: cover;
+      cursor: pointer;
+    }
+
+    .info {
+      padding: 1rem;
+    }
+
+    .info h2 {
+      font-size: 1.2rem;
       margin-bottom: 0.5rem;
     }
 
-    .producto h2 {
-      font-size: 1.1rem;
-      margin-bottom: 0.3rem;
-    }
-
-    .producto p {
-      font-size: 0.9rem;
+    .info p {
+      font-size: 0.95rem;
       color: #666;
     }
 
+    .etiqueta {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: crimson;
+      color: white;
+      padding: 5px 10px;
+      font-size: 0.75rem;
+      border-radius: 5px;
+    }
+
     footer {
+      background: #f1f1f1;
       text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      background-color: #eee;
-      margin-top: 2rem;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+    }
+
+    footer .social i {
+      margin: 0 10px;
+      font-size: 1.5rem;
+      color: #333;
+      transition: color 0.3s;
+    }
+
+    footer .social i:hover {
+      color: var(--color-primario);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 90vh;
+      border-radius: 10px;
+    }
+
+    .modal:target {
+      display: flex;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: white;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.3rem;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <img src="logo.png.jpg" alt="Logo Gangas Uruguay">
-    <h1>Gangas Uruguay - Catálogo</h1>
+    <div style="display: flex; align-items: center;">
+      <img src="logo.png.jpg" alt="Logo">
+      <h1>Gangas Uruguay</h1>
+    </div>
   </header>
 
-  <main>
-    <div class="catalogo">
-      <!-- Productos -->
-      <!-- Repite esta sección para cada producto -->
-      <!-- Puedes mejorar el contenido con nombres y descripciones reales si los tienes -->
-      <!-- Esto puede automatizarse con JavaScript si deseas -->
-      <!-- Aquí están los 15 productos como pediste -->
-      ${[...Array(15)].map((_, i) => `
-        <div class="producto">
-          <img src="prod${i + 1}.jpg" alt="Producto ${i + 1}">
+  <section class="catalogo">
+    <!-- Productos generados -->
+    ${[...Array(15)].map((_, i) => `
+      <div class="producto">
+        <span class="etiqueta">${i % 3 === 0 ? 'Oferta' : i % 5 === 0 ? 'Nuevo' : 'Popular'}</span>
+        <a href="#modal${i + 1}">
+          <img src="prod${i + 1}.jpg" alt="Producto ${i + 1}" />
+        </a>
+        <div class="info">
           <h2>Producto ${i + 1}</h2>
-          <p>Descripción breve del producto ${i + 1}. Ideal para quienes buscan calidad y buen precio.</p>
+          <p>Este es un excelente producto ${i + 1} con calidad garantizada y precio accesible.</p>
         </div>
-      `).join('')}
+      </div>
+    `).join('')}
+  </section>
+
+  <!-- Modales -->
+  ${[...Array(15)].map((_, i) => `
+    <div id="modal${i + 1}" class="modal">
+      <a href="#" class="close-modal">&times;</a>
+      <img src="prod${i + 1}.jpg" alt="Producto ${i + 1}">
     </div>
-  </main>
+  `).join('')}
 
   <footer>
-    &copy; ${new Date().getFullYear()} Gangas Uruguay. Todos los derechos reservados.
+    <p>&copy; ${new Date().getFullYear()} Gangas Uruguay. Todos los derechos reservados.</p>
+    <div class="social">
+      <a href="#"><i class="fab fa-facebook-square"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+    </div>
   </footer>
+
 </body>
 </html>
