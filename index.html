@@ -3,132 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gangas Uruguay</title>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Raleway', sans-serif;
-      background: linear-gradient(to bottom, #fceabb, #f8b500);
-      color: #333;
-    }
-
-    header {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: #c40000;
-      color: white;
-      position: relative;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-
-    header img {
-      width: 140px;
-      border-radius: 16px;
-      box-shadow: 0 0 20px rgba(255,255,255,0.6);
-      transition: transform 0.3s ease-in-out;
-    }
-
-    header img:hover {
-      transform: scale(1.05);
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-top: 1rem;
-    }
-
-    .hero {
-      background: url('hero.gif') center/cover no-repeat;
-      height: 300px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      font-size: 2rem;
-      text-shadow: 2px 2px 5px #000;
-    }
-
-    .section {
-      max-width: 960px;
-      margin: auto;
-      padding: 2rem;
-    }
-
-    ul li::before {
-      content: "✅ ";
-    }
-
-    .cta {
-      text-align: center;
-      margin: 3rem 0;
-    }
-
-    .boton-wpp {
-      background: linear-gradient(to right, #25D366, #128C7E);
-      color: white;
-      padding: 1rem 2rem;
-      border-radius: 10px;
-      font-size: 1.2rem;
-      text-decoration: none;
-      transition: background 0.3s ease;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    }
-
-    .boton-wpp:hover {
-      background: #075e54;
-    }
-
-    footer {
-      background: #222;
-      color: #eee;
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-    }
-
-    a {
-      color: #ffd700;
-    }
-  </style>
+  <title>Gangas Uruguay | Bienvenidos</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body onload="inicializarSitio()">
 
-  <header>
-    <img src="logo.png.jpg" alt="Logo Gangas Uruguay" />
+  <div class="popup" id="popup-descuento">
+    <div class="popup-content">
+      <span class="cerrar" onclick="cerrarPopup()">&times;</span>
+      🎉 ¡10% de descuento si comprás hoy por WhatsApp! <br><br>
+      <a href="https://wa.me/59897213277" class="popup-boton">¡Aprovechar!</a>
+    </div>
+  </div>
+
+  <header class="cabecera">
+    <img src="logo.png" alt="Gangas Uruguay" class="logo">
     <h1>Gangas Uruguay</h1>
-    <p>Las mejores ofertas desde $499 con entrega en todo el país</p>
+    <p>Reventas, envíos y gangas para todo el país 🇺🇾</p>
+    <div class="modo-oscuro-switch">
+      <label>🌗 Modo oscuro <input type="checkbox" id="modoOscuroSwitch"></label>
+    </div>
   </header>
 
-  <div class="hero">
-    ¡Ofertas que no vas a creer!
-  </div>
+  <main>
+    <section class="intro">
+      <h2>🛍️ Bienvenido a Gangas Uruguay</h2>
+      <p>La tienda de reventas más confiable de Tacuarembó. Nuevos productos cada semana, con envíos a todo el país.</p>
+      <a href="catalogo.html" class="boton-destacado">Ver Catálogo</a>
+    </section>
 
-  <section class="section">
-    <h2>¿Por qué elegirnos?</h2>
-    <ul>
-      <li>🔥 Productos exclusivos a solo $499</li>
-      <li>📅 Novedades y ofertas todos los días</li>
-      <li>💬 Atención rápida y personalizada por WhatsApp</li>
-      <li>🚚 Entregas confiables en todo el país</li>
-    </ul>
-  </section>
-
-  <div class="cta">
-    <a href="https://wa.me/59897213277" class="boton-wpp">💬 Hacenos tu pedido por WhatsApp</a>
-  </div>
-
-  <section class="section">
-    <h2>Seguinos en nuestras redes</h2>
-    <ul>
-      <li><a href="https://www.facebook.com/share/1YoChsDWQq/?mibextid=wwXIfr">Facebook Gangas Tacuarembó (link 1)</a></li>
-      <li><a href="https://www.facebook.com/share/1BmVUB7oPt/?mibextid=wwXIfr">Facebook Gangas Tacuarembó (link 2)</a></li>
-    </ul>
-  </section>
+    <section class="redes">
+      <h2>📲 Nuestras redes</h2>
+      <a href="https://wa.me/59897213277">📱 WhatsApp</a> |
+      <a href="https://www.facebook.com/share/1YoChsDWQq/?mibextid=wwXIfr">Facebook Gangas</a>
+    </section>
+  </main>
 
   <footer>
-    © 2025 Gangas Uruguay | Desarrollado con ❤️ por Nicolás Fontana
+    &copy; 2025 Gangas Uruguay | Desarrollado por Nicolás Fontana
+    <div class="contador" id="contador"></div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
