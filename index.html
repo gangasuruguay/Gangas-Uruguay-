@@ -1,171 +1,104 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gangas Uruguay</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f8f8f8;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #fff;
       color: #333;
-      text-align: center;
     }
 
     header {
-      background-color: #c40000;
+      background-color: #d80027;
       color: white;
-      padding: 40px 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
-
-    header img {
-      height: 100px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+      padding: 30px 20px;
+      text-align: center;
     }
 
     header h1 {
-      margin: 15px 0 5px;
+      margin: 0;
       font-size: 2.5em;
     }
 
     header p {
+      margin: 10px 0 0;
       font-size: 1.2em;
-      font-weight: 300;
     }
 
-    .btn {
-      display: inline-block;
-      background-color: #25d366;
-      color: white;
-      padding: 12px 20px;
-      margin: 25px auto 10px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 1em;
-      font-weight: bold;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    }
-
-    .catalog-btn {
-      background-color: #c40000;
-      margin-top: 10px;
-    }
-
-    .productos {
+    main {
       padding: 40px 20px;
+      text-align: center;
     }
 
-    .productos h2 {
-      color: #b71c1c;
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-
-    .productos p {
-      color: #555;
-      font-size: 18px;
+    .section {
       margin-bottom: 40px;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 25px;
-      max-width: 1100px;
-      margin: 0 auto;
+    .section h2 {
+      color: #d80027;
+      font-size: 1.8em;
+      margin-bottom: 10px;
     }
 
-    .producto {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      padding: 15px;
+    .contact, .social a {
+      display: block;
+      margin: 10px 0;
+      font-size: 1.1em;
+      color: #d80027;
+      text-decoration: none;
     }
 
-    .producto img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    .producto h3 {
-      color: #c62828;
-      font-size: 18px;
-      margin-top: 10px;
-    }
-
-    .producto p {
-      font-weight: bold;
-      font-size: 16px;
+    .contact:hover, .social a:hover {
+      text-decoration: underline;
     }
 
     footer {
-      background-color: #222;
-      color: #eee;
-      padding: 20px 10px;
-      margin-top: 40px;
+      background-color: #f2f2f2;
+      color: #555;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+
+    img.logo {
+      max-width: 150px;
+      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="logo.jpg" alt="Gangas Uruguay Logo" />
+    <img src="https://raw.githubusercontent.com/gangasuruguay/Gangas-Uruguay-/main/logo.png" alt="Logo Gangas" class="logo">
     <h1>Gangas Uruguay</h1>
-    <p>¡Ofertas desde $499 y entregas a todo el país!</p>
+    <p>Tu tienda de confianza en Tacuarembó</p>
   </header>
 
-  <a class="btn" href="https://wa.me/59897213277" target="_blank">
-    💬 Hacenos tu pedido por WhatsApp
-  </a>
-  <br />
-  <a class="btn catalog-btn" href="catalogo.html" target="_blank">
-    📁 Ver Catálogo Completo
-  </a>
-
-  <section class="productos">
-    <h2>Catálogo Exclusivo $499</h2>
-    <p>Aquí vas a encontrar productos novedosos a solo $499</p>
-
-    <div class="grid">
-      <!-- Producto 1 al 6 -->
-      <div class="producto">
-        <img src="prod1.jpg" alt="Producto 1" />
-        <h3>Producto 1</h3>
-        <p>$499</p>
-      </div>
-      <div class="producto">
-        <img src="prod2.jpg" alt="Producto 2" />
-        <h3>Producto 2</h3>
-        <p>$499</p>
-      </div>
-      <div class="producto">
-        <img src="prod3.jpg" alt="Producto 3" />
-        <h3>Producto 3</h3>
-        <p>$499</p>
-      </div>
-      <div class="producto">
-        <img src="prod4.jpg" alt="Producto 4" />
-        <h3>Producto 4</h3>
-        <p>$499</p>
-      </div>
-      <div class="producto">
-        <img src="prod5.jpg" alt="Producto 5" />
-        <h3>Producto 5</h3>
-        <p>$499</p>
-      </div>
-      <div class="producto">
-        <img src="prod6.jpg" alt="Producto 6" />
-        <h3>Producto 6</h3>
-        <p>$499</p>
-      </div>
+  <main>
+    <div class="section">
+      <h2>¿Qué ofrecemos?</h2>
+      <p>Reventa de artículos nuevos y usados en excelente estado: ropa, tecnología, hogar, y mucho más.</p>
     </div>
-  </section>
+
+    <div class="section">
+      <h2>Contacto</h2>
+      <a class="contact" href="https://wa.me/59897213277">📱 WhatsApp: 097 213 277</a>
+      <a class="contact" href="mailto:gangasuruguay@gmail.com">✉️ Email: gangasuruguay@gmail.com</a>
+    </div>
+
+    <div class="section social">
+      <h2>Redes Sociales</h2>
+      <a href="https://www.facebook.com/profile.php?id=100063789170798" target="_blank">🌐 Facebook: Gangas Tacuarembó</a>
+    </div>
+  </main>
 
   <footer>
-    © 2025 Gangas Uruguay — Todos los derechos reservados.
+    &copy; 2025 Gangas Uruguay. Todos los derechos reservados.
   </footer>
 
 </body>
