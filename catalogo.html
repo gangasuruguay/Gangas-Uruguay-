@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Catálogo - Gangas Uruguay</title>
+  <title>Catálogo | Gangas Uruguay</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
       margin: 0;
-      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
     }
 
     header {
       background-color: #c40000;
-      text-align: center;
       padding: 2rem 1rem;
+      text-align: center;
       color: white;
     }
 
@@ -29,20 +28,20 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 1.5rem;
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
     }
 
     .producto {
-      background-color: white;
+      background: white;
       border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      width: 200px;
       padding: 1rem;
-      width: 180px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       text-align: center;
-      transition: transform 0.2s;
+      transition: transform 0.3s ease;
     }
 
     .producto:hover {
@@ -51,33 +50,35 @@
 
     .producto img {
       width: 100%;
-      border-radius: 8px;
+      border-radius: 10px;
+      margin-bottom: 0.5rem;
     }
 
     .producto p {
-      margin: 0.5rem 0 0;
       font-weight: bold;
       color: #c40000;
     }
 
     footer {
       text-align: center;
-      background-color: #eee;
-      padding: 2rem 1rem;
+      padding: 2rem;
+      background-color: #f3f3f3;
       font-size: 0.9rem;
     }
 
     .volver {
-      display: block;
-      text-align: center;
-      margin-top: 2rem;
+      display: inline-block;
+      margin: 2rem auto;
+      padding: 1rem 2rem;
+      background-color: #c40000;
+      color: white;
+      border-radius: 10px;
       text-decoration: none;
-      color: #c40000;
       font-weight: bold;
     }
 
     .volver:hover {
-      text-decoration: underline;
+      background-color: #a00000;
     }
   </style>
 </head>
@@ -85,29 +86,32 @@
 
   <header>
     <h1>Catálogo de Productos</h1>
-    <p>Ofertas increíbles por solo $499</p>
+    <p>Todos a solo $499</p>
   </header>
 
-  <div class="catalogo" id="catalogo"></div>
+  <main class="catalogo">
+    <!-- Productos se generan con JavaScript -->
+  </main>
 
-  <a class="volver" href="index.html">⬅️ Volver al inicio</a>
+  <div style="text-align:center;">
+    <a class="volver" href="index.html">← Volver al Inicio</a>
+  </div>
 
   <footer>
-    © 2025 Gangas Uruguay | Desarrollado por Nicolás Fontana
+    © 2025 Gangas Uruguay | Atención por WhatsApp: +598 9721 3277
   </footer>
 
   <script>
-    const catalogo = document.getElementById('catalogo');
+    const contenedor = document.querySelector('.catalogo');
     for (let i = 1; i <= 15; i++) {
-      const div = document.createElement('div');
-      div.className = 'producto';
-      div.innerHTML = `
+      const card = document.createElement('div');
+      card.className = 'producto';
+      card.innerHTML = `
         <img src="prod${i}/prod${i}.jpg" alt="Producto ${i}">
-        <p>Código: PROD${i.toString().padStart(2, '0')}</p>
+        <p>Código: PROD${String(i).padStart(2, '0')}</p>
       `;
-      catalogo.appendChild(div);
+      contenedor.appendChild(card);
     }
   </script>
-
 </body>
 </html>
