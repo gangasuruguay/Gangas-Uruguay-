@@ -4,80 +4,99 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gangas Uruguay</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Rubik', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f9f9f9;
-      color: #333;
+      background-color: #f4f4f4;
+      color: #222;
     }
 
     header {
       text-align: center;
       padding: 2rem 1rem;
-      background-color: #c40000;
+      background: linear-gradient(to right, #c40000, #900000);
       color: white;
     }
 
     header img {
-      width: 120px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      width: 130px;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
     }
 
     h1 {
-      margin-top: 1rem;
+      font-size: 2.2rem;
+      margin: 1rem 0 0.5rem;
     }
 
     .section {
-      padding: 2rem 1rem;
-      max-width: 900px;
+      padding: 2.5rem 1rem;
+      max-width: 1100px;
       margin: auto;
     }
 
     .catalogo {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.8rem;
     }
 
     .producto {
-      width: 180px;
       background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      text-align: center;
-      padding: 1rem;
-      transition: transform 0.2s;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .producto:hover {
-      transform: scale(1.05);
+      transform: scale(1.02);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
     }
 
     .producto img {
       width: 100%;
-      border-radius: 8px;
+      height: 200px;
+      object-fit: cover;
     }
 
-    .producto p {
-      margin-top: 0.5rem;
-      font-weight: bold;
+    .producto-content {
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .producto-content p {
+      margin: 0.4rem 0;
+      font-weight: 600;
       color: #c40000;
     }
 
-    .boton-wpp {
-      display: inline-block;
-      margin: 2rem 0;
-      padding: 1rem 2rem;
+    .producto-content small {
+      display: block;
+      color: #666;
+      margin-top: 0.3rem;
+    }
+
+    .boton-wpp-flotante {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
       background-color: #25D366;
       color: white;
-      border-radius: 8px;
-      font-size: 1.1rem;
-      text-decoration: none;
+      padding: 15px 20px;
+      border-radius: 50px;
       font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: background 0.3s ease;
+      z-index: 1000;
+    }
+
+    .boton-wpp-flotante:hover {
+      background-color: #20ba5a;
     }
 
     footer {
@@ -85,11 +104,21 @@
       padding: 2rem 1rem;
       background-color: #eee;
       font-size: 0.9rem;
+      margin-top: 3rem;
     }
 
     a {
       color: #c40000;
       text-decoration: none;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      color: #c40000;
     }
   </style>
 </head>
@@ -98,55 +127,49 @@
   <header>
     <img src="logo.png.jpg" alt="Logo Gangas Uruguay" />
     <h1>Gangas Uruguay</h1>
-    <p>¡Las mejores ofertas desde $499 con entrega en todo el Uruguay!</p>
+    <p>Ofertas increíbles desde solo $499 con envío a todo Uruguay</p>
   </header>
 
   <section class="section">
     <h2>¿Por qué elegirnos?</h2>
     <ul>
-      <li>🔥 Productos exclusivos a solo <strong>$499</strong></li>
-      <li>📅 Novedades y ofertas <strong>todos los días</strong></li>
-      <li>💬 Atención rápida y personalizada por <strong>WhatsApp</strong></li>
-      <li>🚚 Entregas confiables en <strong>todo el país</strong></li>
+      <li>🔥 Productos seleccionados a solo <strong>$499</strong></li>
+      <li>📦 Envíos confiables a todo el país</li>
+      <li>📲 Atención inmediata por WhatsApp</li>
+      <li>🆕 Novedades todos los días</li>
     </ul>
   </section>
 
   <section class="section">
     <h2>Catálogo de Productos</h2>
-    <div class="catalogo">
-      <!-- Se generan automáticamente 15 productos -->
-      <!-- Puedes aumentar o reducir según necesidad -->
-      <!-- Se asume que prod1.jpg hasta prod15.jpg están en la misma carpeta -->
-      <!-- Código JS embebido abajo lo hará dinámicamente -->
+    <div class="catalogo" id="catalogo">
+      <!-- Los productos se insertan automáticamente -->
     </div>
   </section>
 
-  <section class="section" style="text-align: center;">
-    <a href="https://wa.me/59897213277" class="boton-wpp">💬 Pedí por WhatsApp</a>
-  </section>
-
-  <section class="section">
-    <h2>Seguinos en nuestras redes</h2>
-    <ul>
-      <li><a href="https://www.facebook.com/share/1YoChsDWQq/?mibextid=wwXIfr">Facebook Gangas Tacuarembó (link 1)</a></li>
-      <li><a href="https://www.facebook.com/share/1BmVUB7oPt/?mibextid=wwXIfr">Facebook Gangas Tacuarembó (link 2)</a></li>
-    </ul>
-  </section>
+  <a class="boton-wpp-flotante" href="https://wa.me/59897213277" target="_blank">💬 WhatsApp</a>
 
   <footer>
-    © 2025 Gangas Uruguay | Desarrollado por Nicolás Fontana
+    © 2025 Gangas Uruguay | Desarrollado por Nicolás Fontana  
+    <br/>
+    <a href="https://www.facebook.com/share/1YoChsDWQq/?mibextid=wwXIfr">Facebook Gangas Tacuarembó</a> |
+    <a href="https://www.facebook.com/share/1BmVUB7oPt/?mibextid=wwXIfr">Gangas Solymar</a>
   </footer>
 
   <script>
-    const catalogo = document.querySelector('.catalogo');
+    const catalogo = document.getElementById('catalogo');
     for (let i = 1; i <= 15; i++) {
-      const prod = document.createElement('div');
-      prod.className = 'producto';
-      prod.innerHTML = `
-        <img src="prod${i}.jpg" alt="Producto ${i}">
-        <p>Código: PROD${i.toString().padStart(2, '0')}</p>
+      const carpeta = `prod${i}.jpg`;
+      const div = document.createElement('div');
+      div.className = 'producto';
+      div.innerHTML = `
+        <img src="${carpeta}/${carpeta}" alt="Producto ${i}">
+        <div class="producto-content">
+          <p>Código: PROD${i.toString().padStart(2, '0')}</p>
+          <small>Precio: $499</small>
+        </div>
       `;
-      catalogo.appendChild(prod);
+      catalogo.appendChild(div);
     }
   </script>
 
