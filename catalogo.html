@@ -15,85 +15,76 @@
 
     header {
       text-align: center;
-      padding: 2.5rem 1rem;
+      padding: 2rem 1rem;
       background-color: #c40000;
       color: white;
-      position: relative;
     }
 
     header img {
-      width: 120px;
-      border-radius: 16px;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+      width: 130px;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     }
 
     h1 {
       font-size: 2.5rem;
-      margin-top: 1rem;
-      text-shadow: 1px 1px 2px black;
+      margin: 1rem 0 0.5rem;
     }
 
     header p {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       font-weight: 500;
     }
 
     .section {
-      padding: 3rem 1rem;
-      max-width: 1200px;
+      padding: 2rem 1rem;
+      max-width: 1100px;
       margin: auto;
     }
 
     h2 {
       color: #c40000;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
       text-align: center;
-      font-size: 2rem;
     }
 
     .catalogo {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 2rem;
+      gap: 1.5rem;
     }
 
     .producto {
-      width: 220px;
+      width: 180px;
       background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
       text-align: center;
       padding: 1rem;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: transform 0.2s ease;
     }
 
     .producto:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      transform: scale(1.07);
     }
 
     .producto img {
       width: 100%;
-      height: 180px;
       border-radius: 8px;
       object-fit: cover;
-    }
-
-    .producto h3 {
-      margin: 0.8rem 0 0.3rem;
-      font-size: 1.1rem;
-      color: #c40000;
+      height: 160px;
     }
 
     .producto p {
-      font-size: 0.95rem;
-      color: #555;
+      margin-top: 0.5rem;
+      font-weight: bold;
+      color: #c40000;
     }
 
     .boton-wpp {
       display: inline-block;
-      margin: 3rem auto;
+      margin: 2rem auto;
       padding: 1rem 2rem;
       background-color: #25D366;
       color: white;
@@ -108,18 +99,20 @@
       background-color: #1ebe5b;
     }
 
-    .redes {
+    .redes ul {
+      list-style: none;
+      padding-left: 0;
       text-align: center;
-      margin-top: 4rem;
+    }
+
+    .redes li {
+      margin: 0.5rem 0;
     }
 
     .redes a {
-      display: inline-block;
-      margin: 0.5rem 1rem;
-      color: #c40000;
       text-decoration: none;
       font-weight: bold;
-      font-size: 1.1rem;
+      color: #c40000;
     }
 
     footer {
@@ -135,13 +128,13 @@
   <header>
     <img src="logo.png.jpg" alt="Logo Gangas Uruguay" />
     <h1>Gangas Uruguay</h1>
-    <p>Ofertas desde <strong>$499</strong> — ¡Solo por WhatsApp!</p>
+    <p>Ofertas increíbles desde <strong>$499</strong> — ¡Envíos a todo el país!</p>
   </header>
 
   <section class="section">
-    <h2>🛒 Catálogo de Productos</h2>
+    <h2>🔥 Nuestro catálogo exclusivo 🔥</h2>
     <div class="catalogo" id="catalogo">
-      <!-- Productos se agregan por JavaScript -->
+      <!-- Productos se generan automáticamente -->
     </div>
   </section>
 
@@ -149,25 +142,25 @@
     <a href="https://wa.me/59897213277" class="boton-wpp">💬 Pedí por WhatsApp</a>
   </div>
 
-  <section class="redes">
+  <section class="section redes">
     <h2>📱 Seguinos en nuestras redes</h2>
-    <a href="https://www.facebook.com/share/1YoChsDWQq/?mibextid=wwXIfr">Facebook Gangas Tacuarembó (1)</a>
-    <a href="https://www.facebook.com/share/1BmVUB7oPt/?mibextid=wwXIfr">Facebook Gangas Tacuarembó (2)</a>
+    <ul>
+      <li><a href="https://www.facebook.com/share/1YoChsDWQq/?mibextid=wwXIfr" target="_blank">Facebook Gangas Tacuarembó (link 1)</a></li>
+      <li><a href="https://www.facebook.com/share/1BmVUB7oPt/?mibextid=wwXIfr" target="_blank">Facebook Gangas Tacuarembó (link 2)</a></li>
+    </ul>
   </section>
 
   <footer>
-    © 2025 Gangas Uruguay | Desarrollado por Nicolás Fontana
+    © 2025 Gangas Uruguay | Desarrollado con ❤️ por Nicolás Fontana
   </footer>
 
-  <!-- CORRECTO: Script para cargar imágenes desde carpetas prod1/prod1.jpg, etc. -->
   <script>
     const catalogo = document.getElementById('catalogo');
     for (let i = 1; i <= 30; i++) {
       const prod = document.createElement('div');
       prod.className = 'producto';
       prod.innerHTML = `
-        <img src="prod${i}/prod${i}.jpg" alt="Producto ${i}">
-        <h3>Producto ${i}</h3>
+        <img src="prod${i}.jpg" alt="Producto ${i}">
         <p>Código: PROD${i.toString().padStart(2, '0')}</p>
       `;
       catalogo.appendChild(prod);
