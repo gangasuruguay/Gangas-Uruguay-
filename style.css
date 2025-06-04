@@ -146,3 +146,20 @@ footer {
 .resaltado {
   color: #fff176;
 }
+.boton-wpp-catalogo {
+  display: inline-block;
+  background-color: #25D366;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 10px;
+  text-decoration: none;
+  margin-top: 2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background 0.3s ease;
+}
+
+.boton-wpp-catalogo:hover {
+  background-color: #1ebe5b;
+}
