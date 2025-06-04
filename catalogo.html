@@ -2,117 +2,89 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Catálogo | Gangas Uruguay</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
+  <script>
+    document.documentElement.className = localStorage.getItem('theme') || 'light';
+  </script>
 </head>
 <body>
+  <!-- Botón modo oscuro -->
+  <button class="dark-toggle" onclick="toggleDarkMode()">🌙</button>
 
-  <header class="cabecera">
-    <img src="logo.png" alt="Logo Gangas Uruguay" class="logo" />
-    <h1>Gangas Uruguay</h1>
-    <p>Ofertas increíbles desde <strong>$499</strong> — ¡Envíos a todo el país!</p>
-
-    <label style="position:absolute; top:20px; right:20px; color:#fff; user-select:none;">
-      Modo Oscuro
-      <input type="checkbox" id="modoOscuroSwitch" />
-    </label>
+  <header>
+    <img src="logo.png.jpg" alt="Logo Gangas Uruguay" class="logo" />
+    <h1 class="titulo">Catálogo Exclusivo</h1>
+    <p class="subtitulo">Elegí lo que más te guste y pedilo directo 💬</p>
   </header>
 
-  <main>
-    <section style="text-align:center; margin: 1.5rem 0;">
-      <input type="text" id="buscador" placeholder="Buscar productos..." aria-label="Buscar productos" />
-    </section>
+  <!-- Buscador -->
+  <div class="buscador-container">
+    <input type="text" id="buscador" placeholder="🔎 Buscar productos..." />
+  </div>
 
-    <section class="catalogo" aria-live="polite" aria-label="Listado de productos">
-      <!-- Productos se cargarán dinámicamente -->
-    </section>
+  <!-- Catálogo dinámico -->
+  <section class="catalogo" id="catalogo"></section>
 
-    <section style="text-align:center; margin: 2rem 0;">
-      <a href="https://wa.me/59897213277" target="_blank" class="boton-destacado" aria-label="Pedir por WhatsApp">
-        💬 Pedí por WhatsApp
-      </a>
-    </section>
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <img src="" id="lightbox-img" alt="Vista ampliada">
+  </div>
 
-    <section class="redes">
-      <h2>📱 Seguinos en nuestras redes</h2>
-      <ul>
-        <li><a href="https://www.facebook.com/share/1YoChsDWQq/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Facebook Gangas Tacuarembó (link 1)</a></li>
-        <li><a href="https://www.facebook.com/share/1BmVUB7oPt/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Facebook Gangas Tacuarembó (link 2)</a></li>
-      </ul>
-    </section>
-  </main>
+  <!-- WhatsApp flotante -->
+  <a href="https://wa.me/59897213277" class="whatsapp-fijo">💬 Pedí por WhatsApp</a>
 
+  <!-- Footer -->
   <footer>
-    © 2025 Gangas Uruguay | Desarrollado con ❤️ por Nicolás Fontana
+    © 2025 Gangas Uruguay | Desarrollado por Nicolás Fontana
   </footer>
 
   <script>
-    // Modo oscuro sincronizado
-    document.addEventListener("DOMContentLoaded", () => {
-      const switchModo = document.getElementById("modoOscuroSwitch");
-      const modo = localStorage.getItem("modoOscuro");
-      if (modo === "on") document.body.classList.add("dark-mode");
-      if (modo === "on") switchModo.checked = true;
+    const catalogo = document.getElementById('catalogo');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
 
-      switchModo.addEventListener("change", () => {
-        if (switchModo.checked) {
-          document.body.classList.add("dark-mode");
-          localStorage.setItem("modoOscuro", "on");
-        } else {
-          document.body.classList.remove("dark-mode");
-          localStorage.setItem("modoOscuro", "off");
-        }
-      });
-
-      cargarProductos();
-    });
-
-    // Lista de productos con etiquetas especiales para algunos
-    const productos = [];
-    for(let i=1; i<=15; i++){
-      // Ejemplo: Productos 3 y 7 son nuevos, 5 y 10 en oferta
-      let etiqueta = "";
-      if ([3,7].includes(i)) etiqueta = "Nuevo";
-      else if ([5,10].includes(i)) etiqueta = "Oferta";
-
-      productos.push({
-        codigo: `PROD${i.toString().padStart(2, '0')}`,
-        img: `prod${i}.jpg`,
-        etiqueta: etiqueta
-      });
+    // Generar productos dinámicamente
+    for (let i = 1; i <= 15; i++) {
+      const prod = document.createElement('div');
+      prod.className = 'producto';
+      prod.innerHTML = `
+        <img src="prod${i}/prod${i}.jpg" alt="Producto ${i}" loading="lazy" onclick="verImagen(this)">
+        <p>Código: PROD${String(i).padStart(2, '0')}</p>
+        ${i % 5 === 0 ? '<span class="etiqueta oferta">Oferta</span>' : ''}
+        ${i % 3 === 0 ? '<span class="etiqueta nuevo">Nuevo</span>' : ''}
+      `;
+      catalogo.appendChild(prod);
     }
 
-    function cargarProductos(){
-      const catalogo = document.querySelector(".catalogo");
-      catalogo.innerHTML = "";
-      productos.forEach(({codigo,img,etiqueta})=>{
-        const div = document.createElement("div");
-        div.className = "producto";
-        div.setAttribute("tabindex", "0");
-        div.innerHTML = `
-          ${etiqueta ? `<span class="etiqueta">${etiqueta}</span>` : ""}
-          <img src="${img}" alt="Producto ${codigo}" loading="lazy" />
-          <p>${codigo}</p>
-        `;
-        catalogo.appendChild(div);
-      });
-    }
-
-    // Buscador en tiempo real
-    document.getElementById("buscador").addEventListener("input", function(){
-      const valor = this.value.toLowerCase();
-      const productosDOM = document.querySelectorAll(".producto");
-      productosDOM.forEach(prod => {
-        const codigo = prod.querySelector("p").textContent.toLowerCase();
-        if(codigo.includes(valor)){
-          prod.style.display = "block";
-        } else {
-          prod.style.display = "none";
-        }
+    // Buscador dinámico
+    document.getElementById('buscador').addEventListener('input', e => {
+      const filtro = e.target.value.toLowerCase();
+      const productos = document.querySelectorAll('.producto');
+      productos.forEach(p => {
+        const texto = p.innerText.toLowerCase();
+        p.style.display = texto.includes(filtro) ? 'block' : 'none';
       });
     });
+
+    // Lightbox
+    function verImagen(img) {
+      lightbox.style.display = 'flex';
+      lightboxImg.src = img.src;
+    }
+
+    lightbox.onclick = () => {
+      lightbox.style.display = 'none';
+    }
+
+    // Modo oscuro
+    function toggleDarkMode() {
+      const actual = document.documentElement.className;
+      const nuevo = actual === 'dark' ? 'light' : 'dark';
+      document.documentElement.className = nuevo;
+      localStorage.setItem('theme', nuevo);
+    }
   </script>
-
 </body>
 </html>
