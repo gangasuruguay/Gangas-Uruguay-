@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formas de Pago | Gangas Uruguay</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #fff7f7, #ffecec);
+      color: #333;
+    }
+
+    header {
+      background-color: #c40000;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    header img {
+      width: 120px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+    }
+
+    h1 {
+      font-size: 2.3rem;
+      margin: 1rem 0 0.5rem;
+    }
+
+    .formas-pago {
+      background: #fff;
+      padding: 3rem 1rem;
+      text-align: center;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .formas-pago h2 {
+      color: #c40000;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .formas-pago p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .metodos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .metodos div {
+      width: 160px;
+      background-color: #fff8f8;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .metodos div:hover {
+      transform: scale(1.06);
+    }
+
+    .metodos img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 0.5rem;
+    }
+
+    .metodos span {
+      display: block;
+      font-weight: bold;
+      color: #c40000;
+    }
+
+    .volver {
+      display: inline-block;
+      margin: 2rem auto;
+      background-color: #c40000;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .volver:hover {
+      background-color: #a80000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: #f3f3f3;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.png.jpg" alt="Logo Gangas Uruguay" />
+    <h1>Formas de Pago</h1>
+    <p>Pagá seguro, fácil y rápido con Gangas Uruguay</p>
+  </header>
+
+  <section class="formas-pago">
+    <h2>💳 Métodos Disponibles</h2>
+    <p>Elegí la opción que más te convenga para realizar tu compra:</p>
+    <div class="metodos">
+      <div>
+        <img src="icons/efectivo.png" alt="Efectivo">
+        <span>Efectivo</span>
+      </div>
+      <div>
+        <img src="icons/transferencia.png" alt="Transferencia bancaria">
+        <span>Transferencia</span>
+      </div>
+      <div>
+        <img src="icons/redpagos.png" alt="RedPagos / Abitab">
+        <span>RedPagos / Abitab</span>
+      </div>
+      <div>
+        <img src="icons/mercadopago.png" alt="Mercado Pago">
+        <span>Mercado Pago</span>
+      </div>
+      <div>
+        <img src="icons/wsp.png" alt="Giros por WhatsApp">
+        <span>Giros por WhatsApp</span>
+      </div>
+    </div>
+  </section>
+
+  <div style="text-align: center;">
+    <a href="index.html" class="volver">⬅ Volver al inicio</a>
+  </div>
+
+  <footer>
+    © 2025 Gangas Uruguay | Sitio desarrollado por Nicolás Fontana
+  </footer>
+
+</body>
+</html>
