@@ -2,62 +2,77 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gangas Uruguay</title>
-  <link rel="stylesheet" href="style.css">
-  <script>
-    // Modo oscuro automático con toggle persistente
-    document.documentElement.className = localStorage.getItem('theme') || 'light';
-  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gangas Uruguay | Inicio</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Animación para el logo */
+    @keyframes logoPulse {
+      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 5px #c40000); }
+      50% { transform: scale(1.1); filter: drop-shadow(0 0 15px #ff0000); }
+    }
+    /* Animación para frases */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
-<body class="inicio">
-  <!-- Popup de descuento -->
-  <div class="popup" id="popup-descuento">
-    🎉 ¡10% de descuento si comprás hoy por WhatsApp!
-    <button onclick="document.getElementById('popup-descuento').style.display='none'">X</button>
-  </div>
-
-  <!-- Botón modo oscuro -->
-  <button class="dark-toggle" onclick="toggleDarkMode()">🌙</button>
-
-  <!-- Encabezado -->
+<body>
   <header>
-    <img src="logo.png.jpg" alt="Logo Gangas Uruguay" class="logo" />
-    <h1 class="titulo">Gangas Uruguay</h1>
-    <p class="subtitulo">Ofertas increíbles desde <strong>$499</strong> — ¡Envíos a todo el país!</p>
-    <a href="catalogo.html" class="btn-ir-catalogo">🛍️ Ver Catálogo</a>
+    <div class="logo-container">
+      <img src="logo.png.jpg" alt="Logo Gangas Uruguay" class="logo-animated" />
+    </div>
+    <h1>Gangas Uruguay</h1>
+    <p class="subtitle">Ofertas increíbles desde <strong>$499</strong> — ¡Envíos a todo el país!</p>
   </header>
 
-  <!-- Redes sociales -->
-  <section class="section redes">
-    <h2>📱 Seguinos en nuestras redes</h2>
-    <ul>
-      <li><a href="https://www.facebook.com/share/1YoChsDWQq/?mibextid=wwXIfr" target="_blank">Facebook Gangas Tacuarembó (link 1)</a></li>
-      <li><a href="https://www.facebook.com/share/1BmVUB7oPt/?mibextid=wwXIfr" target="_blank">Facebook Gangas Tacuarembó (link 2)</a></li>
-    </ul>
-  </section>
+  <main>
+    <section class="hero">
+      <h2 id="rotatingText" class="rotating-text">¡Últimas unidades! | Oferta por tiempo limitado | Pedí por WhatsApp ahora</h2>
+      <a href="https://wa.me/59897213277" class="btn-wpp">💬 Pedí por WhatsApp</a>
+    </section>
 
-  <!-- WhatsApp flotante -->
-  <a href="https://wa.me/59897213277" class="whatsapp-fijo">💬 Pedí por WhatsApp</a>
+    <section class="about">
+      <h2>¿Por qué elegir Gangas Uruguay?</h2>
+      <p>Calidad, precios bajos y atención personalizada. Encontrá las mejores ofertas en productos exclusivos.</p>
+    </section>
 
-  <!-- Pie de página -->
+    <section class="marketing">
+      <div class="marketing-card">
+        <h3>🔥 Promociones exclusivas</h3>
+        <p>Descubrí descuentos especiales por tiempo limitado.</p>
+      </div>
+      <div class="marketing-card">
+        <h3>🚚 Envíos rápidos</h3>
+        <p>Envíos a todo el país con seguimiento en tiempo real.</p>
+      </div>
+      <div class="marketing-card">
+        <h3>✨ Atención personalizada</h3>
+        <p>Estamos siempre disponibles para ayudarte con tu compra.</p>
+      </div>
+    </section>
+  </main>
+
   <footer>
-    © 2025 Gangas Uruguay | Desarrollado con ❤️ por Nicolás Fontana
+    <p>© 2025 Gangas Uruguay | Desarrollado con ❤️ por Nicolás Fontana</p>
   </footer>
 
-  <!-- Scripts embebidos -->
   <script>
-    function toggleDarkMode() {
-      const current = document.documentElement.className;
-      const nuevo = current === 'dark' ? 'light' : 'dark';
-      document.documentElement.className = nuevo;
-      localStorage.setItem('theme', nuevo);
-    }
-
-    // Mostrar popup después de 3 segundos
-    setTimeout(() => {
-      document.getElementById('popup-descuento').style.display = 'block';
-    }, 3000);
+    // Texto rotativo con frases de marketing
+    const frases = [
+      "¡Últimas unidades!",
+      "Oferta por tiempo limitado",
+      "Pedí por WhatsApp ahora",
+      "Envíos a todo el país",
+      "Calidad garantizada"
+    ];
+    let i = 0;
+    const rotatingText = document.getElementById('rotatingText');
+    setInterval(() => {
+      rotatingText.textContent = frases[i];
+      i = (i + 1) % frases.length;
+    }, 5000);
   </script>
 </body>
 </html>
