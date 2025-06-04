@@ -1,4 +1,4 @@
-body {
+wbody {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
@@ -227,4 +227,38 @@ footer {
 
 .boton-pago:hover {
   background-color: #a30000;
+}
+
+.boton-pago {
+  background-color: #c40000;
+  color: white;
+  border: 2px solid #fff;
+  margin-left: 10px;
+}
+
+.boton-pago:hover {
+  background-color: #a30000;
+}
+
+/* Estilo para la sección de formas de pago */
+.formas {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.forma {
+  background-color: #fff8f8;
+  border-left: 5px solid #c40000;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.forma h2 {
+  margin-top: 0;
+  color: #c40000;
 }
