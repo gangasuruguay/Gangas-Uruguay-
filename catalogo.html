@@ -4,67 +4,174 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Catálogo | Gangas Uruguay</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #fff7f7, #ffecec);
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      background-color: #c40000;
+      color: white;
+      position: relative;
+    }
+
+    header img {
+      width: 120px;
+      border-radius: 16px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-top: 1rem;
+      text-shadow: 1px 1px 2px black;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    .section {
+      padding: 3rem 1rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #c40000;
+      margin-bottom: 2rem;
+      text-align: center;
+      font-size: 2rem;
+    }
+
+    .catalogo {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .producto {
+      width: 220px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      padding: 1rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .producto:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .producto img {
+      width: 100%;
+      height: 180px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .producto h3 {
+      margin: 0.8rem 0 0.3rem;
+      font-size: 1.1rem;
+      color: #c40000;
+    }
+
+    .producto p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .boton-wpp {
+      display: inline-block;
+      margin: 3rem auto;
+      padding: 1rem 2rem;
+      background-color: #25D366;
+      color: white;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .boton-wpp:hover {
+      background-color: #1ebe5b;
+    }
+
+    .redes {
+      text-align: center;
+      margin-top: 4rem;
+    }
+
+    .redes a {
+      display: inline-block;
+      margin: 0.5rem 1rem;
+      color: #c40000;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: #f3f3f3;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
 
   <header>
-    <img src="logo.png.jpg" alt="Logo Gangas Uruguay" class="logo-animado"/>
-    <h1>Catálogo de productos</h1>
-    <p class="subtitulo">Descubrí nuestras ofertas exclusivas 🔥</p>
+    <img src="logo.png.jpg" alt="Logo Gangas Uruguay" />
+    <h1>Gangas Uruguay</h1>
+    <p>Ofertas desde <strong>$499</strong> — ¡Solo por WhatsApp!</p>
   </header>
 
-  <section class="seccion">
-    <input type="text" id="buscador" placeholder="🔍 Buscar producto..." />
-    <div class="catalogo" id="catalogo"></div>
+  <section class="section">
+    <h2>🛒 Catálogo de Productos</h2>
+    <div class="catalogo" id="catalogo">
+      <!-- Productos se agregan por JavaScript -->
+    </div>
   </section>
 
   <div style="text-align: center;">
     <a href="https://wa.me/59897213277" class="boton-wpp">💬 Pedí por WhatsApp</a>
   </div>
 
+  <section class="redes">
+    <h2>📱 Seguinos en nuestras redes</h2>
+    <a href="https://www.facebook.com/share/1YoChsDWQq/?mibextid=wwXIfr">Facebook Gangas Tacuarembó (1)</a>
+    <a href="https://www.facebook.com/share/1BmVUB7oPt/?mibextid=wwXIfr">Facebook Gangas Tacuarembó (2)</a>
+  </section>
+
   <footer>
-    © 2025 Gangas Uruguay | Sitio creado por Nicolás Fontana
+    © 2025 Gangas Uruguay | Desarrollado por Nicolás Fontana
   </footer>
 
+  <!-- Carga automática de productos con imagen -->
   <script>
     const catalogo = document.getElementById('catalogo');
-    const buscador = document.getElementById('buscador');
-
-    const productos = [];
-
     for (let i = 1; i <= 30; i++) {
-      productos.push({
-        nombre: `Producto ${i}`,
-        codigo: `PROD${i.toString().padStart(2, '0')}`,
-        imagen: `prod${i}/prod${i}.jpg`
-      });
+      const prod = document.createElement('div');
+      prod.className = 'producto';
+      prod.innerHTML = `
+        <img src="prod${i}/prod${i}.jpg" alt="Producto ${i}">
+        <h3>Producto ${i}</h3>
+        <p>Código: PROD${i.toString().padStart(2, '0')}</p>
+      `;
+      catalogo.appendChild(prod);
     }
-
-    function mostrarProductos(filtrados) {
-      catalogo.innerHTML = '';
-      filtrados.forEach(p => {
-        const div = document.createElement('div');
-        div.className = 'producto';
-        div.innerHTML = `
-          <img src="${p.imagen}" alt="${p.nombre}">
-          <h3>${p.nombre}</h3>
-          <p>${p.codigo}</p>
-        `;
-        catalogo.appendChild(div);
-      });
-    }
-
-    buscador.addEventListener('input', () => {
-      const filtro = buscador.value.toLowerCase();
-      const filtrados = productos.filter(p => 
-        p.nombre.toLowerCase().includes(filtro) || 
-        p.codigo.toLowerCase().includes(filtro)
-      );
-      mostrarProductos(filtrados);
-    });
-
-    mostrarProductos(productos);
   </script>
 
 </body>
