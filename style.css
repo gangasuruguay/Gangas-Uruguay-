@@ -212,8 +212,19 @@ footer {
   margin-bottom: 0.5rem;
 }
 
-.metodos span {
-  display: block;
+.boton-pago {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  background-color: #c40000;
+  color: white;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  text-decoration: none;
   font-weight: bold;
-  color: #c40000;
+  transition: background 0.3s;
+}
+
+.boton-pago:hover {
+  background-color: #a30000;
 }
