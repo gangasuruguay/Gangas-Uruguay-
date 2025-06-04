@@ -82,20 +82,21 @@
       color: #c40000;
     }
 
-    .boton-wpp {
+    .boton-wpp-catalogo {
       display: inline-block;
-      margin: 2rem auto;
-      padding: 1rem 2rem;
       background-color: #25D366;
       color: white;
-      border-radius: 10px;
+      padding: 1rem 2rem;
       font-size: 1.2rem;
-      text-decoration: none;
       font-weight: bold;
-      transition: background 0.3s;
+      border-radius: 10px;
+      text-decoration: none;
+      margin-top: 2rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: background 0.3s ease;
     }
 
-    .boton-wpp:hover {
+    .boton-wpp-catalogo:hover {
       background-color: #1ebe5b;
     }
 
@@ -133,13 +134,14 @@
 
   <section class="section">
     <h2>🔥 Nuestro catálogo exclusivo 🔥</h2>
-    <div class="catalogo" id="catalogo">
-      <!-- Productos se generan automáticamente -->
+    <div class="catalogo">
+      <!-- Productos generados dinámicamente -->
     </div>
   </section>
 
+  <!-- Botón de catálogo de WhatsApp -->
   <div style="text-align: center;">
-    <a href="https://wa.me/59897213277" class="boton-wpp">💬 Pedí por WhatsApp</a>
+    <a href="https://wa.me/c/59897213277" target="_blank" class="boton-wpp-catalogo">📦 Ver Catálogo en WhatsApp</a>
   </div>
 
   <section class="section redes">
@@ -155,12 +157,12 @@
   </footer>
 
   <script>
-    const catalogo = document.getElementById('catalogo');
-    for (let i = 1; i <= 30; i++) {
+    const catalogo = document.querySelector('.catalogo');
+    for (let i = 1; i <= 15; i++) {
       const prod = document.createElement('div');
       prod.className = 'producto';
       prod.innerHTML = `
-        <img src="prod${i}.jpg" alt="Producto ${i}">
+        <img src="prod${i}/prod${i}.jpg" alt="Producto ${i}">
         <p>Código: PROD${i.toString().padStart(2, '0')}</p>
       `;
       catalogo.appendChild(prod);
