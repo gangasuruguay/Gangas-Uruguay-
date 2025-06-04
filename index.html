@@ -6,15 +6,111 @@
   <title>Gangas Uruguay | Inicio</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Animación para el logo */
     @keyframes logoPulse {
       0%, 100% { transform: scale(1); filter: drop-shadow(0 0 5px #c40000); }
       50% { transform: scale(1.1); filter: drop-shadow(0 0 15px #ff0000); }
     }
-    /* Animación para frases */
+    #rotatingText {
+      animation: fadeInUp 1s ease forwards;
+    }
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
+    }
+    /* Link catálogo */
+    .link-catalogo {
+      display: inline-block;
+      margin: 2.5rem auto 3rem;
+      padding: 1rem 2.5rem;
+      font-size: 1.25rem;
+      background-color: #c40000;
+      color: white;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      box-shadow: 0 4px 10px rgba(196,0,0,0.7);
+      transition: background-color 0.3s ease;
+    }
+    .link-catalogo:hover {
+      background-color: #ff0000;
+      box-shadow: 0 6px 14px rgba(255,0,0,0.8);
+    }
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 1rem 1.5rem 4rem;
+      line-height: 1.6;
+    }
+    .hero {
+      background: linear-gradient(90deg, #ff0000a0, #c40000a0);
+      padding: 4rem 2rem;
+      text-align: center;
+      color: white;
+      box-shadow: 0 0 20px #c40000cc;
+      border-radius: 20px;
+      margin-bottom: 3rem;
+    }
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      min-height: 48px;
+      font-weight: 900;
+      user-select: none;
+    }
+    .btn-wpp {
+      font-size: 1.4rem;
+      padding: 1rem 3rem;
+      border-radius: 16px;
+      font-weight: 900;
+      box-shadow: 0 6px 12px rgba(0, 200, 100, 0.7);
+      transition: background-color 0.3s ease;
+    }
+    .btn-wpp:hover {
+      background-color: #1ebe5b;
+      box-shadow: 0 8px 18px rgba(0, 230, 120, 0.9);
+    }
+    .about {
+      font-size: 1.2rem;
+      margin-bottom: 3rem;
+      text-align: center;
+      font-weight: 600;
+      color: #600000;
+    }
+    .marketing {
+      display: flex;
+      justify-content: space-around;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .marketing-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 1.8rem 1.4rem;
+      box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+      width: 280px;
+      text-align: center;
+      color: #c40000;
+      font-weight: 700;
+      transition: transform 0.3s ease;
+      cursor: default;
+      user-select: none;
+    }
+    .marketing-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(255, 0, 0, 0.7);
+    }
+    .marketing-card h3 {
+      margin-bottom: 0.8rem;
+      font-size: 1.4rem;
+    }
+    footer {
+      margin-top: 4rem;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #8b0000;
+      font-weight: 600;
+      user-select: none;
     }
   </style>
 </head>
@@ -33,6 +129,8 @@
       <a href="https://wa.me/59897213277" class="btn-wpp">💬 Pedí por WhatsApp</a>
     </section>
 
+    <a href="catalogo.html" class="link-catalogo" aria-label="Ir al catálogo">Ver catálogo completo</a>
+
     <section class="about">
       <h2>¿Por qué elegir Gangas Uruguay?</h2>
       <p>Calidad, precios bajos y atención personalizada. Encontrá las mejores ofertas en productos exclusivos.</p>
@@ -41,7 +139,7 @@
     <section class="marketing">
       <div class="marketing-card">
         <h3>🔥 Promociones exclusivas</h3>
-        <p>Descubrí descuentos especiales por tiempo limitado.</p>
+        <p>Descuentos especiales por tiempo limitado.</p>
       </div>
       <div class="marketing-card">
         <h3>🚚 Envíos rápidos</h3>
@@ -59,7 +157,6 @@
   </footer>
 
   <script>
-    // Texto rotativo con frases de marketing
     const frases = [
       "¡Últimas unidades!",
       "Oferta por tiempo limitado",
