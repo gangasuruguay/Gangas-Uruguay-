@@ -2,174 +2,41 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gangas Uruguay | Inicio</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    @keyframes logoPulse {
-      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 5px #c40000); }
-      50% { transform: scale(1.1); filter: drop-shadow(0 0 15px #ff0000); }
-    }
-    #rotatingText {
-      animation: fadeInUp 1s ease forwards;
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    /* Link catálogo */
-    .link-catalogo {
-      display: inline-block;
-      margin: 2.5rem auto 3rem;
-      padding: 1rem 2.5rem;
-      font-size: 1.25rem;
-      background-color: #c40000;
-      color: white;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 700;
-      box-shadow: 0 4px 10px rgba(196,0,0,0.7);
-      transition: background-color 0.3s ease;
-    }
-    .link-catalogo:hover {
-      background-color: #ff0000;
-      box-shadow: 0 6px 14px rgba(255,0,0,0.8);
-    }
-    main {
-      max-width: 900px;
-      margin: auto;
-      padding: 1rem 1.5rem 4rem;
-      line-height: 1.6;
-    }
-    .hero {
-      background: linear-gradient(90deg, #ff0000a0, #c40000a0);
-      padding: 4rem 2rem;
-      text-align: center;
-      color: white;
-      box-shadow: 0 0 20px #c40000cc;
-      border-radius: 20px;
-      margin-bottom: 3rem;
-    }
-    .hero h2 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      min-height: 48px;
-      font-weight: 900;
-      user-select: none;
-    }
-    .btn-wpp {
-      font-size: 1.4rem;
-      padding: 1rem 3rem;
-      border-radius: 16px;
-      font-weight: 900;
-      box-shadow: 0 6px 12px rgba(0, 200, 100, 0.7);
-      transition: background-color 0.3s ease;
-    }
-    .btn-wpp:hover {
-      background-color: #1ebe5b;
-      box-shadow: 0 8px 18px rgba(0, 230, 120, 0.9);
-    }
-    .about {
-      font-size: 1.2rem;
-      margin-bottom: 3rem;
-      text-align: center;
-      font-weight: 600;
-      color: #600000;
-    }
-    .marketing {
-      display: flex;
-      justify-content: space-around;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-    .marketing-card {
-      background: #fff;
-      border-radius: 14px;
-      padding: 1.8rem 1.4rem;
-      box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
-      width: 280px;
-      text-align: center;
-      color: #c40000;
-      font-weight: 700;
-      transition: transform 0.3s ease;
-      cursor: default;
-      user-select: none;
-    }
-    .marketing-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 25px rgba(255, 0, 0, 0.7);
-    }
-    .marketing-card h3 {
-      margin-bottom: 0.8rem;
-      font-size: 1.4rem;
-    }
-    footer {
-      margin-top: 4rem;
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      color: #8b0000;
-      font-weight: 600;
-      user-select: none;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gangas Uruguay</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <header>
-    <div class="logo-container">
-      <img src="logo.png.jpg" alt="Logo Gangas Uruguay" class="logo-animated" />
-    </div>
-    <h1>Gangas Uruguay</h1>
-    <p class="subtitle">Ofertas increíbles desde <strong>$499</strong> — ¡Envíos a todo el país!</p>
+    <img src="logo.png.jpg" alt="Logo Gangas Uruguay" class="logo-animado"/>
+    <h1>Bienvenido a <span class="resaltado">Gangas Uruguay</span></h1>
+    <p class="subtitulo">Las mejores ofertas del país – ¡Envios a todo Uruguay!</p>
+    <a href="catalogo.html" class="boton-acceso">📦 Ver catálogo</a>
   </header>
 
-  <main>
-    <section class="hero">
-      <h2 id="rotatingText" class="rotating-text">¡Últimas unidades! | Oferta por tiempo limitado | Pedí por WhatsApp ahora</h2>
-      <a href="https://wa.me/59897213277" class="btn-wpp">💬 Pedí por WhatsApp</a>
-    </section>
+  <section class="seccion destacada">
+    <h2>🛍️ Comprá fácil y seguro</h2>
+    <p>Ofrecemos productos seleccionados con precios imbatibles. Comprá por WhatsApp y recibí en casa.</p>
+    <a href="https://wa.me/59897213277" class="boton-wpp">💬 Hacer pedido</a>
+  </section>
 
-    <a href="catalogo.html" class="link-catalogo" aria-label="Ir al catálogo">Ver catálogo completo</a>
+  <section class="seccion info">
+    <h2>🚚 Envíos a todo el país</h2>
+    <p>Confiá en nuestra experiencia. Más de 5 años brindando calidad, confianza y precios bajos.</p>
+  </section>
 
-    <section class="about">
-      <h2>¿Por qué elegir Gangas Uruguay?</h2>
-      <p>Calidad, precios bajos y atención personalizada. Encontrá las mejores ofertas en productos exclusivos.</p>
-    </section>
-
-    <section class="marketing">
-      <div class="marketing-card">
-        <h3>🔥 Promociones exclusivas</h3>
-        <p>Descuentos especiales por tiempo limitado.</p>
-      </div>
-      <div class="marketing-card">
-        <h3>🚚 Envíos rápidos</h3>
-        <p>Envíos a todo el país con seguimiento en tiempo real.</p>
-      </div>
-      <div class="marketing-card">
-        <h3>✨ Atención personalizada</h3>
-        <p>Estamos siempre disponibles para ayudarte con tu compra.</p>
-      </div>
-    </section>
-  </main>
+  <section class="seccion redes">
+    <h2>📱 Seguinos</h2>
+    <ul>
+      <li><a href="https://www.facebook.com/share/1YoChsDWQq/?mibextid=wwXIfr" target="_blank">Facebook Gangas Tacuarembó (link 1)</a></li>
+      <li><a href="https://www.facebook.com/share/1BmVUB7oPt/?mibextid=wwXIfr" target="_blank">Facebook Gangas Tacuarembó (link 2)</a></li>
+    </ul>
+  </section>
 
   <footer>
-    <p>© 2025 Gangas Uruguay | Desarrollado con ❤️ por Nicolás Fontana</p>
+    © 2025 Gangas Uruguay | Creado con ❤️ por Nicolás Fontana
   </footer>
 
-  <script>
-    const frases = [
-      "¡Últimas unidades!",
-      "Oferta por tiempo limitado",
-      "Pedí por WhatsApp ahora",
-      "Envíos a todo el país",
-      "Calidad garantizada"
-    ];
-    let i = 0;
-    const rotatingText = document.getElementById('rotatingText');
-    setInterval(() => {
-      rotatingText.textContent = frases[i];
-      i = (i + 1) % frases.length;
-    }, 5000);
-  </script>
 </body>
 </html>
