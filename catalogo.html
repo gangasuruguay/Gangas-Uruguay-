@@ -5,103 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Catálogo | Gangas Uruguay</title>
   <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <div class="logo-container">
-      <img src="logo.png.jpg" alt="Logo Gangas Uruguay" class="logo-animated" />
-    </div>
-    <h1>Gangas Uruguay</h1>
-    <p class="subtitle">Ofertas increíbles desde <strong>$499</strong> — ¡Envíos a todo el país!</p>
-  </header>
-
-  <main>
-    <section class="catalog-section">
-      <h2>🔥 Nuestro catálogo exclusivo 🔥</h2>
-      <input type="text" id="searchInput" placeholder="Buscar producto..." aria-label="Buscar producto" />
-      <div class="catalogo" id="catalogo">
-        <!-- Productos se generan aquí -->
-      </div>
-    </section>
-
-    <a href="https://wa.me/59897213277" class="btn-wpp fixed-wpp">💬 Pedí por WhatsApp</a>
-  </main>
-
-  <footer>
-    <p>© 2025 Gangas Uruguay | Desarrollado con ❤️ por Nicolás Fontana</p>
-  </footer>
-
-  <script>
-    const productos = [
-      { id: 1, nombre: "Producto 1", etiqueta: "Nuevo", imagen: "prod1.jpg" },
-      { id: 2, nombre: "Producto 2", etiqueta: "Oferta", imagen: "prod2.jpg" },
-      { id: 3, nombre: "Producto 3", etiqueta: "", imagen: "prod3.jpg" },
-      { id: 4, nombre: "Producto 4", etiqueta: "Nuevo", imagen: "prod4.jpg" },
-      { id: 5, nombre: "Producto 5", etiqueta: "", imagen: "prod5.jpg" },
-      { id: 6, nombre: "Producto 6", etiqueta: "Oferta", imagen: "prod6.jpg" },
-      { id: 7, nombre: "Producto 7", etiqueta: "", imagen: "prod7.jpg" },
-      { id: 8, nombre: "Producto 8", etiqueta: "Nuevo", imagen: "prod8.jpg" },
-      { id: 9, nombre: "Producto 9", etiqueta: "", imagen: "prod9.jpg" },
-      { id: 10, nombre: "Producto 10", etiqueta: "", imagen: "prod10.jpg" },
-      { id: 11, nombre: "Producto 11", etiqueta: "Oferta", imagen: "prod11.jpg" },
-      { id: 12, nombre: "Producto 12", etiqueta: "", imagen: "prod12.jpg" },
-      { id: 13, nombre: "Producto 13", etiqueta: "", imagen: "prod13.jpg" },
-      { id: 14, nombre: "Producto 14", etiqueta: "Nuevo", imagen: "prod14.jpg" },
-      { id: 15, nombre: "Producto 15", etiqueta: "", imagen: "prod15.jpg" }
-    ];
-
-    const catalogo = document.getElementById('catalogo');
-    const searchInput = document.getElementById('searchInput');
-
-    function mostrarProductos(lista) {
-      catalogo.innerHTML = '';
-      lista.forEach(prod => {
-        const prodDiv = document.createElement('div');
-        prodDiv.className = 'producto';
-        prodDiv.innerHTML = `
-          <div class="etiqueta ${prod.etiqueta.toLowerCase()}">${prod.etiqueta}</div>
-          <img src="${prod.imagen}" alt="${prod.nombre}" loading="lazy" />
-          <p class="nombre-prod">${prod.nombre}</p>
-          <p class="codigo-prod">Código: PROD${prod.id.toString().padStart(2, '0')}</p>
-        `;
-        catalogo.appendChild(prodDiv);
-
-        prodDiv.addEventListener('click', () => {
-          mostrarLightbox(prod.imagen, prod.nombre);
-        });
-      });
+  <style>
+    .catalog-section {
+      max-width: 1100px;
+      margin: 2.5rem auto 5rem;
+      padding: 0 1.5rem;
     }
-
-    function mostrarLightbox(imgSrc, nombre) {
-      let lightbox = document.getElementById('lightbox');
-      if (!lightbox) {
-        lightbox = document.createElement('div');
-        lightbox.id = 'lightbox';
-        lightbox.innerHTML = `
-          <div class="lightbox-content">
-            <img src="${imgSrc}" alt="${nombre}" />
-            <p>${nombre}</p>
-            <button id="cerrarLightbox" aria-label="Cerrar lightbox">✖</button>
-          </div>
-        `;
-        document.body.appendChild(lightbox);
-        document.getElementById('cerrarLightbox').addEventListener('click', () => {
-          lightbox.remove();
-        });
-        lightbox.addEventListener('click', (e) => {
-          if (e.target === lightbox) lightbox.remove();
-        });
-      }
+    h2 {
+      font-size: 2.4rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      font-weight: 900;
+      color: #c40000;
+      user-select: none;
     }
-
-    searchInput.addEventListener('input', () => {
-      const filtro = searchInput.value.toLowerCase();
-      const filtrados = productos.filter(p => p.nombre.toLowerCase().includes(filtro));
-      mostrarProductos(filtrados);
-    });
-
-    // Inicializa la galería completa
-    mostrarProductos(productos);
-  </script>
-</body>
-</html>
+    #searchInput {
+      display: block;
+      margin: 0 auto 2.5rem;
+      padding: 0.9rem 1.2rem;
+      width: 100%;
+      max-width: 360px;
+      font-size: 1.2rem;
+      border-radius: 12px;
+      border: 2px solid #c40000;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+    #searchInput:focus {
+      border-color: #ff0000;
+      box-shadow: 0 0 10px #ff0000aa;
+    }
+    .btn-wpp.fixed-wpp {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 1100;
+      font-size: 1.5rem;
+      padding: 1rem 2.8rem;
+      background-color: #25d366;
+      border-radius: 22px;
+      box-shadow: 0 6px 15px rgba(37, 211,
