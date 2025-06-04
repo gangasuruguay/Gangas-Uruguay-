@@ -2,74 +2,62 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gangas Uruguay - Inicio</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gangas Uruguay</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // Modo oscuro automático con toggle persistente
+    document.documentElement.className = localStorage.getItem('theme') || 'light';
+  </script>
 </head>
-<body>
+<body class="inicio">
+  <!-- Popup de descuento -->
+  <div class="popup" id="popup-descuento">
+    🎉 ¡10% de descuento si comprás hoy por WhatsApp!
+    <button onclick="document.getElementById('popup-descuento').style.display='none'">X</button>
+  </div>
 
-  <header class="cabecera">
-    <img src="logo.jpg" alt="Logo Gangas Uruguay" class="logo" />
-    <h1>Gangas Uruguay</h1>
-    <p>Ofertas increíbles desde <strong>$499</strong> — ¡Envíos a todo el país!</p>
+  <!-- Botón modo oscuro -->
+  <button class="dark-toggle" onclick="toggleDarkMode()">🌙</button>
 
-    <label style="position:absolute; top:20px; right:20px; color:#fff; user-select:none;">
-      Modo Oscuro
-      <input type="checkbox" id="modoOscuroSwitch" />
-    </label>
+  <!-- Encabezado -->
+  <header>
+    <img src="logo.png.jpg" alt="Logo Gangas Uruguay" class="logo" />
+    <h1 class="titulo">Gangas Uruguay</h1>
+    <p class="subtitulo">Ofertas increíbles desde <strong>$499</strong> — ¡Envíos a todo el país!</p>
+    <a href="catalogo.html" class="btn-ir-catalogo">🛍️ Ver Catálogo</a>
   </header>
 
-  <main>
-    <section style="text-align:center; margin-top:2rem;">
-      <a href="catalogo.html" class="boton-destacado">Ver Catálogo Completo</a>
-    </section>
+  <!-- Redes sociales -->
+  <section class="section redes">
+    <h2>📱 Seguinos en nuestras redes</h2>
+    <ul>
+      <li><a href="https://www.facebook.com/share/1YoChsDWQq/?mibextid=wwXIfr" target="_blank">Facebook Gangas Tacuarembó (link 1)</a></li>
+      <li><a href="https://www.facebook.com/share/1BmVUB7oPt/?mibextid=wwXIfr" target="_blank">Facebook Gangas Tacuarembó (link 2)</a></li>
+    </ul>
+  </section>
 
-    <section class="redes">
-      <h2>📱 Seguinos en nuestras redes</h2>
-      <ul>
-        <li><a href="https://www.facebook.com/share/1YoChsDWQq/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Facebook Gangas Tacuarembó (link 1)</a></li>
-        <li><a href="https://www.facebook.com/share/1BmVUB7oPt/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Facebook Gangas Tacuarembó (link 2)</a></li>
-      </ul>
-    </section>
-  </main>
+  <!-- WhatsApp flotante -->
+  <a href="https://wa.me/59897213277" class="whatsapp-fijo">💬 Pedí por WhatsApp</a>
 
+  <!-- Pie de página -->
   <footer>
     © 2025 Gangas Uruguay | Desarrollado con ❤️ por Nicolás Fontana
   </footer>
 
-  <!-- Popup descuento -->
-  <div id="popup-descuento" class="popup" role="dialog" aria-modal="true" aria-labelledby="popupTitulo">
-    <div class="popup-content">
-      <span class="cerrar" onclick="cerrarPopup()" aria-label="Cerrar popup">&times;</span>
-      <h2 id="popupTitulo">🎉 ¡10% de descuento si comprás hoy por WhatsApp!</h2>
-      <a href="https://wa.me/59897213277" target="_blank" class="popup-boton">💬 Pedí por WhatsApp</a>
-    </div>
-  </div>
-
+  <!-- Scripts embebidos -->
   <script>
-    // Popup y contador visitas
-    window.addEventListener("load", () => {
-      const popup = document.getElementById("popup-descuento");
-      if (!localStorage.getItem("popupMostrado")) {
-        popup.style.display = "flex";
-        localStorage.setItem("popupMostrado", "true");
-      }
-
-      let visitas = localStorage.getItem("visitas") || 0;
-      visitas++;
-      localStorage.setItem("visitas", visitas);
-      if (document.getElementById("contador")) {
-        document.getElementById("contador").innerText = `👀 Visitas en este navegador: ${visitas}`;
-      }
-    });
-
-    function cerrarPopup() {
-      document.getElementById("popup-descuento").style.display = "none";
+    function toggleDarkMode() {
+      const current = document.documentElement.className;
+      const nuevo = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.className = nuevo;
+      localStorage.setItem('theme', nuevo);
     }
 
-    // Modo oscuro
-    document.addEventListener("DOMContentLoaded", () => {
-      const switchModo = document.getElementById("modoOscuroSwitch");
-      const modo = localStorage.getItem("modoOscuro");
-
-      if (modo === "on
+    // Mostrar popup después de 3 segundos
+    setTimeout(() => {
+      document.getElementById('popup-descuento').style.display = 'block';
+    }, 3000);
+  </script>
+</body>
+</html>
